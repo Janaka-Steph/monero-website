@@ -110,7 +110,7 @@ const roadmapData: RoadmapItem[] = [
 ];
 
 // We group the data into chunks of 3 items and repeat the image underneath
-function chunkArray(array, chunkSize) {
+function chunkArray(array: RoadmapItem[], chunkSize: number) {
   const chunks = [];
   for (let i = 0; i < array.length; i += chunkSize) {
     chunks.push(array.slice(i, i + chunkSize));
@@ -139,7 +139,7 @@ const groupedRoadmapData = chunkArray(roadmapData, 3);
       {groupedRoadmapData.map((group) => (
           <div class="flex flex-col shrink-0 w-full">
             <div class="flex">
-              {group.map((r) => <RoadmapItem key={r.id} {...r} />)}
+              {group.map((r: RoadmapItem) => <RoadmapItem key={r.year} {...r} />)}
             </div>
             <Image src={roadmap} alt="roadmap" class="w-full relative -top-[8rem]"/>
           </div>

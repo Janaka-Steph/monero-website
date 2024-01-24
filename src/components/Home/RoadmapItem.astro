@@ -16,7 +16,7 @@ const {year, achievements} = Astro.props;
   <div class="flex flex-col justify-start items-start space-y-2">
     <div class="text-xl font-semibold">{year}</div>
     <ul class="text-sm list-disc">
-      {achievements.map((achievement) =>
+      {achievements.map((achievement: string) =>
           <li>{achievement}</li>)}
     </ul>
     <a href="#" target="_blank" class="flex gap-x-2 items-center">
