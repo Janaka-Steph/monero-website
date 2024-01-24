@@ -1,0 +1,23 @@
+---
+import {Image} from 'astro:assets';
+import mailingList from '../../assets/images/mailingList/mailling-list.svg';
+import {Input} from "@/components/ui/input";
+import {Button} from "@/components/ui/button";
+---
+
+<div class="flex flex-wrap gap-y-12 gap-x-32">
+  <div class="w-full lg:flex-1 flex flex-col space-y-6">
+    <h2>Mailing List</h2>
+    <p>Receive important announcements and news directly on your email address by joining our mailing lists</p>
+    <div class="flex space-x-4 items-center mt-4">
+      <Input placeholder="Email Address"/>
+      <Button>Submit</Button>
+    </div>
+  </div>
+  <div class="w-4/5 mx-auto lg:w-2/5">
+    <Image src={mailingList} alt="mailing list" class="w-full"/>
+  </div>
+</div>
+
+
+

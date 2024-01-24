@@ -1,0 +1,21 @@
+---
+import {Button} from "@/components/ui/button";
+import {Image} from 'astro:assets';
+import wallet from '../../assets/images/downloadWallet/wallet.svg';
+---
+
+<section class="flex flex-wrap items-center justify-between">
+  <div class="w-full md:w-2/5 space-y-6">
+    <h2>Start using Monero</h2>
+    <p>
+      Whether you want to send or receive money from someone or accept money as payment
+      for your business, you can use Monero wallet. It's a powerful and easy to use wallet
+      that can safely store your funds and send or receive funds for you.
+    </p>
+    <div class="flex space-x-4">
+      <Button>Download Wallet</Button>
+      <Button variant="outline">View Guide</Button>
+    </div>
+  </div>
+  <Image src={wallet} alt="Wallet" class="w-full md:w-1/2"/>
+</section>

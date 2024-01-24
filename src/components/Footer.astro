@@ -1,0 +1,32 @@
+---
+import {Image} from 'astro:assets';
+import logo from '../assets/images/menu/logo.svg';
+---
+
+<footer class="bg-[#121212] py-32 px-12 md:px-36 lg:px-60 space-y-6">
+    <Image src={logo} alt="logo" class="w-32"/>
+
+  <div class="flex flex-wrap justify-between gap-x-8">
+    <ul class="w-full md:w-auto flex flex-col items-start mb-8">
+      <li class="mb-2"><a href="#">Community Crowdfunding</a></li>
+      <li class="mb-2"><a href="#">Discover Monero</a></li>
+      <li class="mb-2"><a href="#">Wallets</a></li>
+      <li class="mb-2"><a href="#">User Guide</a></li>
+      <li class="mb-2"><a href="#">Exchanges and Services</a></li>
+    </ul>
+    <ul class="w-full md:w-auto flex flex-col items-start mb-8">
+      <li class="mb-2"><a href="#">Vulnerability Response</a></li>
+      <li class="mb-2"><a href="#">Documents</a></li>
+      <li class="mb-2"><a href="#">Research</a></li>
+      <li class="mb-2"><a href="#">Mining/Running a node</a></li>
+      <li class="mb-2"><a href="#">Third-Party Tools</a></li>
+    </ul>
+    <ul class="w-full md:w-auto flex flex-col items-start mb-8">
+      <li class="mb-2"><a href="#">Translate</a></li>
+      <li class="mb-2"><a href="#">Workgroups</a></li>
+      <li class="mb-2"><a href="#">Blog</a></li>
+      <li class="mb-2"><a href="#">Source Code</a></li>
+      <li class="mb-2"><a href="#">Contribute</a></li>
+    </ul>
+  </div>
+</footer>

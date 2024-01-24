@@ -1,0 +1,43 @@
+---
+import '@/styles/globals.css';
+import Layout from '../layouts/Layout.astro';
+import Hero from "@/components/Home/Hero.astro"
+import PromoVideo from "@/components/Home/PromoVideo.astro"
+import Features from "@/components/Home/Features.astro"
+import Communities from "../components/Home/Communities.astro";
+import DownloadWallet from "../components/Home/DownloadWallet.astro";
+import Sponsors from "../components/Home/Sponsors.astro";
+import Roadmap from "../components/Home/Roadmap.astro";
+import RecentBlogPosts from "../components/Home/RecentBlogPosts.astro";
+import MailingList from "../components/Home/MailingList.astro";
+---
+
+<Layout title="GetMonero.org">
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-8 lg:mt-0 px-8">
+    <Hero/>
+  </div>
+  <div class="w-full mt-28 px-8 sm:px-0">
+    <PromoVideo/>
+  </div>
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+    <Features/>
+  </div>
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+    <DownloadWallet/>
+  </div>
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-24 px-8">
+    <Communities/>
+  </div>
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+    <Sponsors/>
+  </div>
+  <div class="w-full mt-28 px-0 overflow-x-scroll hide-scrollbar">
+    <Roadmap/>
+  </div>
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl px-8">
+    <RecentBlogPosts/>
+  </div>
+  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+    <MailingList/>
+  </div>
+</Layout>
