@@ -1,15 +1,16 @@
 /** @type {import("eslint").Linter.Config} */
 module.exports = {
   extends: [
-    "plugin:astro/recommended",
+    'plugin:astro/recommended',
+    'prettier', // has to be last
   ],
   overrides: [
     {
-      files: ["*.astro"],
-      parser: "astro-eslint-parser",
+      files: ['*.astro'],
+      parser: 'astro-eslint-parser',
       parserOptions: {
-        parser: "@typescript-eslint/parser",
-        extraFileExtensions: [".astro"],
+        parser: '@typescript-eslint/parser',
+        extraFileExtensions: ['.astro'],
       },
       rules: {
         // override/add rules settings here, such as:

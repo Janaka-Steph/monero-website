@@ -1,138 +1,87 @@
 ---
-import { Image } from "astro:assets";
-import arrowCircle from "../../assets/images/roadmap/arrow-circle.svg";
-import roadmap from "../../assets/images/roadmap/roadmap.svg";
-import RoadmapItem from "./RoadmapItem.astro";
+import { Image } from 'astro:assets'
+import arrowCircle from '../../assets/images/roadmap/arrow-circle.svg'
+import roadmap from '../../assets/images/roadmap/roadmap.svg'
+import RoadmapItem from './RoadmapItem.astro'
 
 interface RoadmapItem {
-  year: string;
+  year: string
   // Max 3 achievements
-  achievements: string[];
+  achievements: string[]
 }
 
 const roadmapData: RoadmapItem[] = [
   {
-    year: "2014",
-    achievements: [
-      "Monero launched",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2014',
+    achievements: ['Monero launched', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2015",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2015',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2016",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2016',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2017",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2017',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2018",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2018',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2019",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2019',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2020",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2020',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2021",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2021',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2022",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2022',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2023",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2023',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2024",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2024',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
   {
-    year: "2025",
-    achievements: [
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-      "Monero Research Lab founded",
-    ],
+    year: '2025',
+    achievements: ['Monero Research Lab founded', 'Monero Research Lab founded', 'Monero Research Lab founded'],
   },
-];
+]
 
 // We group the data into chunks of 3 items and repeat the image underneath
 function chunkArray(array: RoadmapItem[], chunkSize: number) {
-  const chunks = [];
+  const chunks = []
   for (let i = 0; i < array.length; i += chunkSize) {
-    chunks.push(array.slice(i, i + chunkSize));
+    chunks.push(array.slice(i, i + chunkSize))
   }
-  return chunks;
+  return chunks
 }
-const groupedRoadmapData = chunkArray(roadmapData, 3);
+const groupedRoadmapData = chunkArray(roadmapData, 3)
 ---
 
 <div class="w-full flex flex-col items-center justify-center">
-  <div
-    class="w-full sm:w-4/5 md:w-3/5 xl:w-1/2 space-y-6 flex flex-col items-center px-8"
-  >
+  <div class="w-full sm:w-4/5 md:w-3/5 xl:w-1/2 space-y-6 flex flex-col items-center px-8">
     <div class="w-full flex justify-between items-center">
       <Image src={arrowCircle} alt="arrow back" class="w-6 h-6" />
       <h2>Roadmap</h2>
       <Image src={arrowCircle} alt="arrow forward" class="w-6 h-6 rotate-180" />
     </div>
     <p class="w-full md:w-2/3 lg:1/2 text-center">
-      Monero team and community are working hard to bring more into the Monero
-      project. Here you can see what’s been done and what’s ahead of the
-      project.
+      Monero team and community are working hard to bring more into the Monero project. Here you can see what’s been
+      done and what’s ahead of the project.
     </p>
   </div>
 
@@ -146,11 +95,7 @@ const groupedRoadmapData = chunkArray(roadmapData, 3);
                 <RoadmapItem key={r.year} {...r} />
               ))}
             </div>
-            <Image
-              src={roadmap}
-              alt="roadmap"
-              class="w-full relative -top-[8rem]"
-            />
+            <Image src={roadmap} alt="roadmap" class="w-full relative -top-[8rem]" />
           </div>
         ))
       }
