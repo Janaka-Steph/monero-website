@@ -27,9 +27,9 @@ const buttonVariants = tv({
  * For Astro components, we recommend setting your defaultVariants within
  * Astro.props (which are `undefined` by default)
  */
-const { intent = 'primary', size = 'default' } = Astro.props
+const { intent = 'primary', size = 'default', ...rest } = Astro.props
 ---
 
-<button class={buttonVariants({ intent, size })}>
+<button class={buttonVariants({ intent, size })} {...rest}>
   <slot />
 </button>

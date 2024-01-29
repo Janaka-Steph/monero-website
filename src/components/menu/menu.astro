@@ -1,18 +1,18 @@
 ---
 import { Image } from 'astro:assets'
-import i18n from '../assets/images/menu/i18n.svg'
-import logo from '../assets/images/logo.svg'
+import i18n from './i18n.svg'
+import logo from '@/assets/images/logo.svg'
 ---
 
 <nav class="mb-4 flex flex-wrap justify-between items-center">
-  <div class="flex flex-1">
+  <a class="flex flex-1" href="/">
     <Image src={logo} alt="logo" class="mr-auto" />
-  </div>
+  </a>
   <ul class="flex flex-1 justify-center items-center space-x-6">
     <li><a href="#" class="hover:underline">Developers</a></li>
     <li><a href="#" class="hover:underline">Individuals</a></li>
     <li><a href="#" class="hover:underline">Community</a></li>
-    <li><a href="#" class="hover:underline">Blog</a></li>
+    <li><a href="/blog" class="hover:underline">Blog</a></li>
   </ul>
   <div class="flex flex-1">
     <Image src={i18n} alt="internationalization" class="ml-auto" />

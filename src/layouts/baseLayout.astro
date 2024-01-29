@@ -1,6 +1,6 @@
 ---
-import Menu from '../components/Menu.astro'
-import Footer from '../components/Footer.astro'
+import Menu from '@/components/menu/menu.astro'
+import Footer from '@/components/footer.astro'
 interface Props {
   title: string
 }
@@ -15,7 +15,7 @@ const { title } = Astro.props
     <meta name="description" content="Astro description" />
     <meta name="viewport" content="width=device-width" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>

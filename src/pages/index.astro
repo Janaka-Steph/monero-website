@@ -1,18 +1,18 @@
 ---
-import '@/styles/globals.css'
-import Layout from '../layouts/Layout.astro'
-import Hero from '@/components/Home/Hero.astro'
-import PromoVideo from '@/components/Home/PromoVideo.astro'
-import Features from '@/components/Home/Features.astro'
-import Communities from '../components/Home/Communities.astro'
-import DownloadWallet from '../components/Home/DownloadWallet.astro'
-import Sponsors from '../components/Home/Sponsors.astro'
-import Roadmap from '../components/Home/Roadmap.astro'
-import RecentBlogPosts from '../components/Home/RecentBlogPosts.astro'
-import MailingList from '../components/Home/MailingList.astro'
+import '@/assets/styles/globals.css'
+import Layout from '@/layouts/baseLayout.astro'
+import Hero from './_home/hero/hero.astro'
+import PromoVideo from './_home/promoVideo/promoVideo.astro'
+import Features from './_home/features/features.astro'
+import Communities from './_home/communities/communities.astro'
+import DownloadWallet from './_home/downloadWallet/downloadWallet.astro'
+import Sponsors from './_home/sponsors/sponsors.astro'
+import Roadmap from './_home/roadmap/roadmap.astro'
+import RecentBlogPosts from './_home/recentBlogPosts/recentBlogPosts.astro'
+import MailingList from './_home/mailingList/mailingList.astro'
 ---
 
-<Layout title="GetMonero.org">
+<Layout title="Home | Monero - secure, private, untraceable">
   <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-8 lg:mt-0 px-8">
     <Hero />
   </div>
