@@ -1,8 +1,8 @@
 ---
-import {Image} from 'astro:assets';
-import cardPink from '../../assets/images/card-pink.svg';
-import cardGreen from '../../assets/images/card-green.svg';
-import cardBlue from '../../assets/images/card-blue.svg';
+import { Image } from "astro:assets";
+import cardPink from "../../assets/images/card-pink.svg";
+import cardGreen from "../../assets/images/card-green.svg";
+import cardBlue from "../../assets/images/card-blue.svg";
 import arrowRight from "../../assets/images/arrow-right.svg";
 ---
 
@@ -12,40 +12,52 @@ import arrowRight from "../../assets/images/arrow-right.svg";
     <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 space-y-2">
       <div class="relative">
         <Image src={cardPink} alt="card" class="w-full h-auto" />
-        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8">
+        <div
+          class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8"
+        >
           <h2 class="text-lg">Bitcoin Monero atomic swaps are now live</h2>
         </div>
       </div>
       <p>{"COMIT's tool to swap BTC <-> XMR is live on Mainnet."}</p>
       <a href="#" target="_blank" class="flex gap-x-2 items-center">
         <span class="text-primary text-sm">Read More</span>
-        <Image src={arrowRight} alt="arrow" class="w-3"/>
+        <Image src={arrowRight} alt="arrow" class="w-3" />
       </a>
     </div>
     <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 space-y-2">
       <div class="relative">
         <Image src={cardGreen} alt="card" class="w-full h-auto" />
-        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8">
+        <div
+          class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8"
+        >
           <h2 class="text-lg">General Fund 2020/2021 report</h2>
         </div>
       </div>
-      <p>Report from the Core Team about the usage of the General Fund for the years 2020 and 2021.</p>
+      <p>
+        Report from the Core Team about the usage of the General Fund for the
+        years 2020 and 2021.
+      </p>
       <a href="#" target="_blank" class="flex gap-x-2 items-center">
         <span class="text-primary text-sm">Read More</span>
-        <Image src={arrowRight} alt="arrow" class="w-3"/>
+        <Image src={arrowRight} alt="arrow" class="w-3" />
       </a>
     </div>
     <div class="w-full md:w-1/2 lg:w-1/3 px-4 mb-8 space-y-2">
       <div class="relative">
         <Image src={cardBlue} alt="card" class="w-full h-auto" />
-        <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8">
+        <div
+          class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8"
+        >
           <h2 class="text-lg">Monero GUI 0.17.2.2 'Oxygen Orion' released</h2>
         </div>
       </div>
-      <p>Point release containing bug fix for GUI being invisible on systems with multiple monitors.</p>
+      <p>
+        Point release containing bug fix for GUI being invisible on systems with
+        multiple monitors.
+      </p>
       <a href="#" target="_blank" class="flex gap-x-2 items-center">
         <span class="text-primary text-sm">Read More</span>
-        <Image src={arrowRight} alt="arrow" class="w-3"/>
+        <Image src={arrowRight} alt="arrow" class="w-3" />
       </a>
     </div>
   </div>

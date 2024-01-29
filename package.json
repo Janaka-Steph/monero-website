@@ -1,6 +1,5 @@
 {
   "name": "monero-website",
-  "type": "module",
   "version": "0.0.1",
   "scripts": {
     "dev": "astro dev",
@@ -8,24 +7,18 @@
     "build": "astro check && astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint --ext .js,.astro src",
-    "lint:fix": "eslint --ext .js,.astro src --fix"
+    "lint": "eslint 'src/**/*.{ts,tsx,astro}'",
+    "lint:fix": "eslint --fix 'src/**/*.{ts,tsx,astro}'",
+    "prettier": "prettier --check 'src/**/*.{ts,tsx,astro}'",
+    "prettier:fix": "prettier --write 'src/**/*.{ts,tsx,astro}'"
   },
   "dependencies": {
     "@astrojs/check": "^0.4.1",
-    "@astrojs/react": "^3.0.9",
     "@astrojs/tailwind": "^5.1.0",
-    "@radix-ui/react-slot": "^1.0.2",
-    "@types/react": "^18.2.48",
-    "@types/react-dom": "^18.2.18",
-    "astro": "^4.2.1",
-    "class-variance-authority": "^0.7.0",
+    "astro": "^4.2.6",
     "clsx": "^2.1.0",
-    "lucide-react": "^0.314.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "sharp": "^0.33.2",
-    "tailwind-merge": "^2.2.0",
+    "tailwind-variants": "^0.1.20",
     "tailwindcss": "^3.4.1",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.3.3"
@@ -33,6 +26,9 @@
   "devDependencies": {
     "@typescript-eslint/parser": "^6.19.0",
     "eslint": "^8.56.0",
-    "eslint-plugin-astro": "^0.31.3"
+    "eslint-plugin-astro": "^0.31.3",
+    "prettier": "^3.2.4",
+    "prettier-plugin-astro": "^0.13.0",
+    "prettier-plugin-tailwindcss": "^0.5.11"
   }
 }

@@ -1,7 +1,7 @@
 ---
-import {Image} from 'astro:assets';
-import arrowCircle from '../../assets/images/roadmap/arrow-circle.svg';
-import roadmap from '../../assets/images/roadmap/roadmap.svg';
+import { Image } from "astro:assets";
+import arrowCircle from "../../assets/images/roadmap/arrow-circle.svg";
+import roadmap from "../../assets/images/roadmap/roadmap.svg";
 import RoadmapItem from "./RoadmapItem.astro";
 
 interface RoadmapItem {
@@ -12,101 +12,101 @@ interface RoadmapItem {
 
 const roadmapData: RoadmapItem[] = [
   {
-    year: '2014',
+    year: "2014",
     achievements: [
-      'Monero launched',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero launched",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2015',
+    year: "2015",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2016',
+    year: "2016",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2017',
+    year: "2017",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2018',
+    year: "2018",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2019',
+    year: "2019",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2020',
+    year: "2020",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2021',
+    year: "2021",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2022',
+    year: "2022",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2023',
+    year: "2023",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2024',
+    year: "2024",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
   },
   {
-    year: '2025',
+    year: "2025",
     achievements: [
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
-      'Monero Research Lab founded',
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
+      "Monero Research Lab founded",
     ],
-  }
+  },
 ];
 
 // We group the data into chunks of 3 items and repeat the image underneath
@@ -121,29 +121,39 @@ const groupedRoadmapData = chunkArray(roadmapData, 3);
 ---
 
 <div class="w-full flex flex-col items-center justify-center">
-  <div class="w-full sm:w-4/5 md:w-3/5 xl:w-1/2 space-y-6 flex flex-col items-center px-8">
+  <div
+    class="w-full sm:w-4/5 md:w-3/5 xl:w-1/2 space-y-6 flex flex-col items-center px-8"
+  >
     <div class="w-full flex justify-between items-center">
-      <Image src={arrowCircle} alt="arrow back" class="w-6 h-6"/>
+      <Image src={arrowCircle} alt="arrow back" class="w-6 h-6" />
       <h2>Roadmap</h2>
-      <Image src={arrowCircle} alt="arrow forward" class="w-6 h-6 rotate-180"/>
+      <Image src={arrowCircle} alt="arrow forward" class="w-6 h-6 rotate-180" />
     </div>
     <p class="w-full md:w-2/3 lg:1/2 text-center">
-      Monero team and community are working hard to bring more into the Monero project. Here you can see what’s been
-      done
-      and what’s ahead of the project.
+      Monero team and community are working hard to bring more into the Monero
+      project. Here you can see what’s been done and what’s ahead of the
+      project.
     </p>
   </div>
 
   <div class="flex mt-20 overflow-x-auto hide-scrollbar">
     <div class="flex flex-nowrap">
-      {groupedRoadmapData.map((group) => (
+      {
+        groupedRoadmapData.map((group) => (
           <div class="flex flex-col shrink-0 w-full">
             <div class="flex">
-              {group.map((r: RoadmapItem) => <RoadmapItem key={r.year} {...r} />)}
+              {group.map((r: RoadmapItem) => (
+                <RoadmapItem key={r.year} {...r} />
+              ))}
             </div>
-            <Image src={roadmap} alt="roadmap" class="w-full relative -top-[8rem]"/>
+            <Image
+              src={roadmap}
+              alt="roadmap"
+              class="w-full relative -top-[8rem]"
+            />
           </div>
-      ))}
+        ))
+      }
     </div>
   </div>
 </div>

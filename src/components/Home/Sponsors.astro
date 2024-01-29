@@ -1,20 +1,25 @@
 ---
-import {Image} from 'astro:assets';
-import macStadium from '../../assets/images/sponsors/mac-stadium.svg';
-import tariLabs from '../../assets/images/sponsors/tari-labs.svg';
-import forkNetworking from '../../assets/images/sponsors/fork-networking.svg';
-import globee from '../../assets/images/sponsors/globee.svg';
-import symas from '../../assets/images/sponsors/symas.svg';
+import { Image } from "astro:assets";
+import macStadium from "../../assets/images/sponsors/mac-stadium.svg";
+import tariLabs from "../../assets/images/sponsors/tari-labs.svg";
+import forkNetworking from "../../assets/images/sponsors/fork-networking.svg";
+import globee from "../../assets/images/sponsors/globee.svg";
+import symas from "../../assets/images/sponsors/symas.svg";
 ---
 
 <div class="flex flex-col items-center space-y-6">
   <h2 class="">Sponsors</h2>
-  <p class="w-full lg:w-2/5 text-center">The following businesses actively support the Monero Project in its goal to bring financial privacy to the world.</p>
-  <div class="flex flex-wrap justify-center items-center space-x-4 md:space-x-8">
-    <Image src={macStadium} alt="mac stadium"/>
-    <Image src={tariLabs} alt="tari labs"/>
-    <Image src={forkNetworking} alt="fork networking"/>
-    <Image src={globee} alt="globee"/>
-    <Image src={symas} alt="symas"/>
+  <p class="w-full lg:w-2/5 text-center">
+    The following businesses actively support the Monero Project in its goal to
+    bring financial privacy to the world.
+  </p>
+  <div
+    class="flex flex-wrap justify-center items-center space-x-4 md:space-x-8"
+  >
+    <Image src={macStadium} alt="mac stadium" />
+    <Image src={tariLabs} alt="tari labs" />
+    <Image src={forkNetworking} alt="fork networking" />
+    <Image src={globee} alt="globee" />
+    <Image src={symas} alt="symas" />
   </div>
 </div>

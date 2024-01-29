@@ -1,22 +1,28 @@
 ---
-import {Image} from 'astro:assets';
-import hero from '../../assets/images/hero/hero.svg';
-import {Button} from "@/components/ui/button";
+import { Image } from "astro:assets";
+import hero from "../../assets/images/hero/hero.svg";
+import Button from "../ui/button.astro";
 ---
 
-<header class="flex flex-wrap justify-between items-center space-y-8 sm:space-y-0">
+<header
+  class="flex flex-wrap justify-between items-center space-y-8 sm:space-y-0"
+>
   <div class="w-full md:w-1/2 lg:w-2/5 pr-8">
-    <h1 class="text-4xl font-sans-bis font-semibold text-white leading-tight mb-6">
+    <h1
+      class="text-4xl font-sans-bis font-semibold text-white leading-tight mb-6"
+    >
       <span class="text-primary">Monero</span> is private, decentralized money
     </h1>
-    <p class="leading-relaxed mb-6">Built with a focus on privacy, Monero is a community
-      driven cryptocurrency that keeps your finances confidential and secure.</p>
+    <p class="leading-relaxed mb-6">
+      Built with a focus on privacy, Monero is a community driven cryptocurrency
+      that keeps your finances confidential and secure.
+    </p>
     <div class="flex gap-x-4 mm:gap-x-8">
       <Button>Discover Monero</Button>
-      <Button variant="outline">Join Communities</Button>
+      <Button intent="outline">Join Communities</Button>
     </div>
   </div>
   <div class="w-full md:w-1/2 lg:w-fit flex justify-center pl-8">
-    <Image src={hero} alt="Hero"/>
+    <Image src={hero} alt="Hero" />
   </div>
 </header>

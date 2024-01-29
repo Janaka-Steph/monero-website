@@ -1,0 +1,35 @@
+---
+import { tv } from "tailwind-variants";
+
+const buttonVariants = tv({
+  base: "inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50 sm:min-w-40",
+  variants: {
+    intent: {
+      primary: "bg-primary text-primary-foreground hover:bg-primary/85",
+      secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
+      outline: "border-input border-2 bg-background hover:text-foreground/80",
+      link: "bg-transparent underline-offset-4 hover:underline",
+    },
+    size: {
+      default: "h-12 px-4 py-2",
+      sm: "h-9 px-3",
+      lg: "h-11 px-8",
+      icon: "h-10 w-10",
+    },
+  },
+  defaultVariants: {
+    intent: "primary",
+    size: "default",
+  },
+});
+
+/**
+ * For Astro components, we recommend setting your defaultVariants within
+ * Astro.props (which are `undefined` by default)
+ */
+const { intent = "primary", size = "default" } = Astro.props;
+---
+
+<button class={buttonVariants({ intent, size })}>
+  <slot />
+</button>
