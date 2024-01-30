@@ -1,0 +1,22 @@
+---
+import { tv } from 'tailwind-variants'
+
+const containerVariants = tv({
+  base: 'mt-28 w-full px-8',
+  variants: {
+    intent: {
+      fullWidth: 'sm:px-0',
+      maxWidth: 'sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl',
+    },
+  },
+  defaultVariants: {
+    intent: 'maxWidth',
+  },
+})
+
+const { class: className, intent = 'maxWidth', ...rest } = Astro.props
+---
+
+<div class={containerVariants({ intent, class: className })} {...rest}>
+  <slot />
+</div>

@@ -1,21 +1,24 @@
 ---
+import TwoColsLayout from '@/components/twoColsLayout.astro'
 import Button from '@/components/button.astro'
 import { Image } from 'astro:assets'
 import wallet from './wallet.svg'
 ---
 
-<section class="flex flex-wrap items-center justify-between">
-  <div class="w-full md:w-2/5 space-y-6">
+<TwoColsLayout>
+  <Fragment slot="left">
     <h2>Start using Monero</h2>
     <p>
       Whether you want to send or receive money from someone or accept money as payment for your business, you can use
       Monero wallet. It's a powerful and easy to use wallet that can safely store your funds and send or receive funds
       for you.
     </p>
-    <div class="flex space-x-4">
+    <div class="flex gap-x-4 md:gap-x-6">
       <Button>Download Wallet</Button>
       <Button intent="outline">View Guide</Button>
     </div>
-  </div>
-  <Image src={wallet} alt="Wallet" class="w-full md:w-1/2" />
-</section>
+  </Fragment>
+  <Fragment slot="right">
+    <Image src={wallet} alt="Wallet" />
+  </Fragment>
+</TwoColsLayout>

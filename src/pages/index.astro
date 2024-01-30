@@ -1,5 +1,6 @@
 ---
 import '@/assets/styles/globals.css'
+import Container from '@/components/container.astro'
 import Layout from '@/layouts/baseLayout.astro'
 import Hero from './_home/hero/hero.astro'
 import PromoVideo from './_home/promoVideo/promoVideo.astro'
@@ -13,31 +14,39 @@ import MailingList from './_home/mailingList/mailingList.astro'
 ---
 
 <Layout title="Home | Monero - secure, private, untraceable">
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-8 lg:mt-0 px-8">
+  <Container class="mt-8 lg:mt-0">
     <Hero />
-  </div>
-  <div class="w-full mt-28 px-8 sm:px-0">
+  </Container>
+
+  <Container intent="fullWidth">
     <PromoVideo />
-  </div>
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+  </Container>
+
+  <Container>
     <Features />
-  </div>
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+  </Container>
+
+  <Container>
     <DownloadWallet />
-  </div>
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-24 px-8">
+  </Container>
+
+  <Container>
     <Communities />
-  </div>
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+  </Container>
+
+  <Container>
     <Sponsors />
-  </div>
-  <div class="w-full mt-28 px-0 overflow-x-scroll hide-scrollbar">
+  </Container>
+
+  <Container intent="fullWidth" class="px-0 overflow-x-scroll hide-scrollbar">
     <Roadmap />
-  </div>
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl px-8">
+  </Container>
+
+  <Container>
     <RecentBlogPosts />
-  </div>
-  <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-28 px-8">
+  </Container>
+
+  <Container>
     <MailingList />
-  </div>
+  </Container>
 </Layout>
