@@ -1,0 +1,32 @@
+---
+import { Image } from 'astro:assets'
+import arrowRight from '@/assets/images/arrow-right.svg'
+interface Props {
+  cardBgImg: ImageMetadata
+  title: string
+  description?: string
+  link: string
+  class?: string
+}
+const { cardBgImg, title, description, link, class: className } = Astro.props
+---
+
+<div class:list={['w-full h-full space-y-4', className]}>
+  <div class="relative h-full -my-[4px]">
+    <Image src={cardBgImg} alt="card" class="w-full h-full" />
+    <div class="absolute top-0 left-0 right-0 bottom-0 flex items-center justify-center p-8">
+      <h2 class="text-lg">{title}</h2>
+    </div>
+  </div>
+  {
+    description && (
+      <div class="space-y-2">
+        <p>{description}</p>
+        <a href={link} target="_blank" class="flex gap-x-2 items-center">
+          <span class="text-primary text-sm">Read More</span>
+          <Image src={arrowRight} alt="arrow" class="w-3" />
+        </a>
+      </div>
+    )
+  }
+</div>
