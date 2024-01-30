@@ -1,7 +1,6 @@
 ---
 import { Image } from 'astro:assets'
 import arrowCircle from './arrow-circle.svg'
-import roadmap from './roadmap.svg'
 import RoadmapItem from './roadmapItem.astro'
 
 interface RoadmapItem {
@@ -95,7 +94,8 @@ const groupedRoadmapData = chunkArray(roadmapData, 3)
                 <RoadmapItem key={r.year} {...r} />
               ))}
             </div>
-            <Image src={roadmap} alt="roadmap" class="w-full relative -top-[8rem]" />
+            <div class="w-full h-12 bg-[#292929] -mt-8" />
+            <div class="w-full h-4 bg-[#212121]" />
           </div>
         ))
       }

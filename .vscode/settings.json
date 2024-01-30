@@ -1,16 +1,9 @@
 {
-  "eslint.validate": [
-    "javascript",
-    "astro",
-    "typescript",
-  ],
+  "eslint.validate": ["javascript", "astro", "typescript"],
   "files.associations": {
-    "*.css": "tailwindcss"
+    "*.css": "tailwindcss",
+    "*.xml": "html",
+    "*.svg": "html"
   },
-  "tailwindCSS.experimental.classRegex": [
-    [
-      "tv\\((([^()]*|\\([^()]*\\))*)\\)",
-      "[\"'`]([^\"'`]*).*?[\"'`]"
-    ]
-  ]
+  "tailwindCSS.experimental.classRegex": [["tv\\((([^()]*|\\([^()]*\\))*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"]]
 }
