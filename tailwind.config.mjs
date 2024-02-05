@@ -66,7 +66,7 @@ export default {
         ],
       },
       boxShadow: {
-        menu: '0 300px 200px 50px hsl(0,0%,9%)',
+        menu: '0 200px 100px 50px hsl(0,0%,9%)',
       },
     },
   },
