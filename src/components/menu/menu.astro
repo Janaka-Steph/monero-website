@@ -2,6 +2,8 @@
 import { Image } from 'astro:assets'
 import i18n from './i18n.svg'
 import logo from '@/assets/images/logo.svg'
+import DeveloperMenu from './developerMenu/developerMenu.astro'
+import IndividualsMenu from './individualsMenu/individualsMenu.astro'
 ---
 
 <nav class="mb-4 flex flex-wrap justify-between items-center">
@@ -9,8 +11,14 @@ import logo from '@/assets/images/logo.svg'
     <Image src={logo} alt="logo" class="mr-auto" />
   </a>
   <ul class="flex flex-1 justify-center items-center space-x-6">
-    <li><a href="#" class="hover:underline">Developers</a></li>
-    <li><a href="#" class="hover:underline">Individuals</a></li>
+    <li class="group">
+      <a href="#" class="hover:underline">Developers</a>
+      <DeveloperMenu />
+    </li>
+    <li class="group">
+      <a href="#" class="hover:underline">Individuals</a>
+      <IndividualsMenu />
+    </li>
     <li><a href="#" class="hover:underline">Community</a></li>
     <li><a href="/blog" class="hover:underline">Blog</a></li>
   </ul>

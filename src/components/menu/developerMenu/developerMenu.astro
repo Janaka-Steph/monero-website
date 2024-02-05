@@ -1,0 +1,56 @@
+---
+import { Image } from 'astro:assets'
+import Container from '@/components/container.astro'
+import MenuItem from '../menuItem.astro'
+import MenuSubItem from '../menuSubItem.astro'
+import file from './file.svg'
+import flask from './flask.svg'
+import nodes from './nodes.svg'
+import refreshSqare from './refresh-square.svg'
+import github from './github.svg'
+import gitlab from './gitlab.svg'
+import monero from './monero.svg'
+import chat from './chat.svg'
+---
+
+<div class="absolute left-0 right-0 hidden group-hover:block hover:block pt-10 bg-background shadow-menu">
+  <Container class="mt-0 mx-auto">
+    <div class="grid grid-cols-4 gap-6">
+      <div class="space-y-4">
+        <MenuItem
+          icon={file}
+          title="Documents"
+          description="Collection of guides, documentation and useful resources for developers"
+        />
+        <MenuSubItem icon={github} />
+      </div>
+
+      <div class="space-y-4">
+        <MenuItem
+          icon={flask}
+          title="Research"
+          description="Libraries and papers for those who are interested in researching on Monero"
+        />
+        <MenuSubItem icon={gitlab} />
+      </div>
+
+      <div class="space-y-4">
+        <MenuItem
+          icon={nodes}
+          title="Mining/Running a node"
+          description="Instructions on Moner mining and running nodes on the blockchain"
+        />
+        <MenuSubItem icon={monero} />
+      </div>
+
+      <div class="space-y-4">
+        <MenuItem
+          icon={refreshSqare}
+          title="Project Updates"
+          description="News and notices on Monero’s updates and releases"
+        />
+        <MenuSubItem icon={chat} />
+      </div>
+    </div>
+  </Container>
+</div>

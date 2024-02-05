@@ -1,0 +1,38 @@
+---
+import Container from '@/components/container.astro'
+import MenuItem from '../menuItem.astro'
+import monero from './monero.svg'
+import wallet from './wallet.svg'
+import document from './document.svg'
+import transfer from './transfer.svg'
+---
+
+<div class="absolute left-0 right-0 hidden group-hover:block hover:block pt-10 bg-background shadow-menu">
+  <Container class="mt-0 mx-auto">
+    <div class="grid grid-cols-4 gap-6">
+      <MenuItem
+        icon={monero}
+        title="Discover Monero"
+        description="Learn more about Monero as the leading privacy cryptocurrency"
+      />
+
+      <MenuItem
+        icon={wallet}
+        title="Wallets"
+        description="Download Monero wallets to start sending or receiving money in a safe manner"
+      />
+
+      <MenuItem
+        icon={document}
+        title="User Guides"
+        description="Get help using instructions and answers to frequently asked questions"
+      />
+
+      <MenuItem
+        icon={transfer}
+        title="Exchanges and Services"
+        description="A list of products and services that accept Monero’s XMR token"
+      />
+    </div>
+  </Container>
+</div>

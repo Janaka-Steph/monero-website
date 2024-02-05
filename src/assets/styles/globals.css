@@ -41,9 +41,10 @@
   }
 
   @font-face {
-    font-family: "Inter";
-    src: url("/fonts/inter-variable.woff2") format("woff2 supports variations"),
-    url("/fonts/inter-variable.woff2") format("woff2-variations");
+    font-family: 'Inter';
+    src:
+      url('/fonts/inter-variable.woff2') format('woff2 supports variations'),
+      url('/fonts/inter-variable.woff2') format('woff2-variations');
     font-weight: 100 1000;
   }
 
@@ -54,7 +55,12 @@
     font-style: normal;
   }
 
-  h1, h2, h3, h4, h5, h6 {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     @apply font-sans-bis;
   }
 
@@ -70,7 +76,7 @@
     display: none; /* For WebKit browsers */
   }
   .hide-scrollbar {
-    -ms-overflow-style: none;  /* For Internet Explorer and Edge */
-    scrollbar-width: none;  /* For Firefox */
+    -ms-overflow-style: none; /* For Internet Explorer and Edge */
+    scrollbar-width: none; /* For Firefox */
   }
 }
