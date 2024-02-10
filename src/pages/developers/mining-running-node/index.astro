@@ -1,0 +1,197 @@
+---
+import '@/assets/styles/globals.css'
+import Layout from '@/layouts/baseLayout.astro'
+import OneColLayout from '@/components/oneColLayout.astro'
+import TwoColsLayout from '@/components/twoColsLayout.astro'
+import Container from '@/components/container.astro'
+import { Image } from 'astro:assets'
+import mining from './_images/mining.svg'
+import proofOfWork from './_images/proof-of-work.svg'
+import soloMining from './_images/solo-mining.svg'
+import poolMining from './_images/pool-mining.svg'
+import link from '@/assets/images/external-link.svg'
+import arrowRight from '@/assets/images/arrow-right.svg'
+import runNode from './_images/run-node.svg'
+---
+
+<Layout title="Mining & Running Node | Monero">
+  <Container>
+    <TwoColsLayout rightClass="md:justify-center" hasRightImage>
+      <Fragment slot="left">
+        <h2>Mining Monero</h2>
+        <p>
+          Monero is a cryptocurrency that relies on proof-of-work mining to achieve distributed consensus. Below you'll
+          find some information and resources on how to begin mining. The Monero Project does not endorse any particular
+          pool, software, or hardware, and the content below is provided for informational purposes only.
+        </p>
+      </Fragment>
+      <Fragment slot="right">
+        <Image src={mining} alt="mining" />
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout hasRightImage>
+      <Fragment slot="left">
+        <h2>Proof of Work</h2>
+        <p>
+          One of Monero's philosophies is to maintain egalitarian mining, so that everyone can have the possibility to
+          mine. To achieve this, Monero uses a particular algorithm ideated and developed by members of the Monero
+          community: RandomX. This PoW algorithm is ASIC resistant, which means it's impossible to build specialized
+          hardware to mine Monero. Miners must use consumer-grade hardware and compete fairly.
+        </p>
+        <p>Monero can be mined by both CPUs and GPUs, but the former is much more efficient.</p>
+      </Fragment>
+      <Fragment slot="right">
+        <Image src={proofOfWork} alt="proof of work" />
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <div class="space-y-6">
+      <OneColLayout>
+        <h2>Solo vs Pool Mining</h2>
+        <p>
+          Miners can decide if they prefer to solo mine or to mine in a pool. Each method has its benefits and
+          drawbacks, but the Monero Project encourages individuals to solo mine using the Monero software (GUI and CLI),
+          as this type of independent mining is the most effective way to increase the robustness of the Monero network.
+        </p>
+      </OneColLayout>
+      <TwoColsLayout hasLeftImage hasRightImage>
+        <Fragment slot="left">
+          <div class="flex flex-col items-center space-y-6">
+            <Image src={soloMining} alt="solo mining" />
+            <div class="flex flex-col space-y-4">
+              <h3 class="text-center">Solo Mining</h3>
+              <p>+ Makes the network more secure than if mining in a pool.</p>
+              <p>+ You can mine using your Monero wallet. No need for additional software.</p>
+              <p>
+                - Depending on your hashrate, it might take months before you find a block. This is often referred to as
+                a 'lottery'.
+              </p>
+            </div>
+          </div>
+        </Fragment>
+        <Fragment slot="right">
+          <div class="flex flex-col items-center space-y-6">
+            <Image src={poolMining} alt="pool mining" />
+            <div class="flex flex-col space-y-4">
+              <h3 class="text-center">Pool Mining</h3>
+              <p>
+                + Frequent payouts. You will receive XMR according to how much you are participating in the pool of your
+                choice.
+              </p>
+              <p>- You have to pay a fee to the pool operator.</p>
+              <p>
+                - You can only use third party software to pool mine, which might take a small percentage of your
+                shares.
+              </p>
+              <p>
+                - Too many people mining on a single pool might lead on the pool having &gt;50% of the total hashrate,
+                which is dangerous.
+              </p>
+            </div>
+          </div>
+        </Fragment>
+      </TwoColsLayout>
+    </div>
+  </Container>
+
+  <Container>
+    <div class="bg-card rounded-2xl p-8">
+      <div class="flex flex-wrap gap-x-8 md:gap-x-16 lg:gap-x-32 md:flex-nowrap items-center justify-between space-y-8">
+        <div class="flex-1 min-w-full md:min-w-0 space-y-6 text-center md:text-left">
+          <h3>More Info</h3>
+          <p>
+            You can use the following links If you need help choosing a pool or you just want more information about
+            them:
+          </p>
+        </div>
+        <div class="flex-1 min-w-full md:min-w-0 space-y-2">
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2" />
+            <a href="https://miningpoolstats.stream" target="_blank" class="font-bold text-primary">
+              miningpoolstats.stream
+            </a>
+          </div>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2" />
+            <a href="https://pools.xmr.wiki" target="_blank" class="font-bold text-primary">pools.xmr.wiki</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </Container>
+
+  <Container>
+    <TwoColsLayout rightClass="min-w-full md:min-w-0">
+      <Fragment slot="left">
+        <h3>Hardware</h3>
+        <p>
+          Monero can be mined on both CPUs and GPUs, but the latter is much less efficient than the former. You can get
+          an idea of how your hardware performs compared to others, using the following link (some results might be out
+          of date):
+        </p>
+        <div class="flex items-end">
+          <Image src={link} alt="link" class="w-5 mr-2" />
+          <a href="https://monerobenchmarks.info" target="_blank" class="font-bold text-primary"
+            >monerobenchmarks.info</a
+          >
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <h3>Software</h3>
+        <p>
+          There are several options when it comes to mining software. As already said, to solo mine, the CLI or GUI
+          wallets can be used (CPU only). If you want to mine to a pool or mine with a GPU, you'll need dedicated
+          software. Miners supporting Monero:
+        </p>
+        <div class="space-y-2">
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2" />
+            <a href="https://xmrig.com" target="_blank" class="font-bold text-primary">XMRig</a>
+          </div>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2" />
+            <a href="https://github.com/cryptonote-social/csminer" target="_blank" class="font-bold text-primary"
+              >CSminer</a
+            >
+          </div>
+        </div>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <Fragment slot="left">
+        <h2>Running a Node</h2>
+        <p>
+          An easy and effective way to help the Monero network is to run a node. Nodes ensure the network keeps running
+          safe and decentralized. A simple fully synchronized node is enough to help the network, but if you want to go
+          out of your way, you could run an open remote node, to allow other people to connect to it.
+        </p>
+        <p>We have several guides to help you run and configure your node:</p>
+        <div class="space-y-2">
+          <div class="flex items-center">
+            <a href="#" class="font-bold text-primary">Running a node on VPS</a>
+            <Image src={arrowRight} alt="link" class="w-5 ml-2" />
+          </div>
+          <div class="flex items-center">
+            <a href="#" class="font-bold text-primary">Run a node through I2P with I2P-zero</a>
+            <Image src={arrowRight} alt="link" class="w-5 ml-2" />
+          </div>
+          <div class="flex items-center">
+            <a href="#" class="font-bold text-primary">Set up a wallet (using a remote node) on Tails</a>
+            <Image src={arrowRight} alt="link" class="w-5 ml-2" />
+          </div>
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <Image src={runNode} alt="run node" />
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+</Layout>

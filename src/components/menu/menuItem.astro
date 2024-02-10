@@ -5,13 +5,16 @@ interface Props {
   icon: any
   title: string
   description: string
+  link?: string
 }
 
-const { icon, title, description } = Astro.props
+const { icon, title, description, link } = Astro.props
 ---
 
-<div class="bg-secondary hover:bg-primary/80 rounded-lg px-4 pb-4 min-h-80 lg:min-h-72 xl:min-h-64 cursor-pointer">
-  <Image src={icon} alt="image" class="min-w-8 py-10" />
-  <h3 class="font-bold mb-4 text-[18px]">{title}</h3>
-  <p class="text-sm">{description}</p>
-</div>
+<a href={link}>
+  <div class="bg-secondary hover:bg-primary/80 rounded-lg px-4 pb-4 min-h-80 lg:min-h-72 xl:min-h-64 cursor-pointer">
+    <Image src={icon} alt="image" class="min-w-8 py-10" />
+    <h3 class="font-bold mb-4 text-[18px]">{title}</h3>
+    <p class="text-sm">{description}</p>
+  </div>
+</a>

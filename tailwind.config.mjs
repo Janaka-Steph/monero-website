@@ -28,6 +28,9 @@ export default {
           DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
           foreground: 'hsl(var(--muted-foreground) / <alpha-value>)',
         },
+        card: {
+          DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+        },
       },
       keyframes: {
         'accordion-down': {
