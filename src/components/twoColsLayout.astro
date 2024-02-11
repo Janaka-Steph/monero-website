@@ -2,14 +2,20 @@
 interface Props {
   leftClass?: string
   rightClass?: string
+  wrapperClass?: string
   hasLeftImage?: boolean
   hasRightImage?: boolean
 }
 
-const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false } = Astro.props
+const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false, wrapperClass } = Astro.props
 ---
 
-<div class="flex flex-wrap gap-x-8 md:gap-x-16 lg:gap-x-32 md:flex-nowrap items-center justify-between space-y-8">
+<div
+  class:list={[
+    'flex flex-wrap gap-x-8 md:gap-x-16 lg:gap-x-32 md:flex-nowrap justify-between space-y-8 md:space-y-0',
+    wrapperClass,
+  ]}
+>
   {
     hasLeftImage ? (
       <div class:list={['flex-1 min-w-full md:min-w-0 flex justify-center md:justify-start', leftClass]}>

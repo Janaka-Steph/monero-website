@@ -76,6 +76,12 @@
     @apply text-xl font-semibold;
   }
 
+  p,
+  a,
+  span {
+    @apply text-sm md:text-base;
+  }
+
   .hide-scrollbar::-webkit-scrollbar {
     display: none; /* For WebKit browsers */
   }

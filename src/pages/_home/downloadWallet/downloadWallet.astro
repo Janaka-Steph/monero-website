@@ -13,12 +13,12 @@ import wallet from './wallet.svg'
       Monero wallet. It's a powerful and easy to use wallet that can safely store your funds and send or receive funds
       for you.
     </p>
-    <div class="flex gap-x-4 md:gap-x-6">
+    <div class="flex gap-x-4 md:gap-x-6 justify-center md:justify-start">
       <Button>Download Wallet</Button>
       <Button intent="outline">View Guide</Button>
     </div>
   </Fragment>
   <Fragment slot="right">
-    <Image src={wallet} alt="Wallet" />
+    <Image src={wallet} alt="Wallet" class="max-h-[220px] md:max-h-[270px]" />
   </Fragment>
 </TwoColsLayout>

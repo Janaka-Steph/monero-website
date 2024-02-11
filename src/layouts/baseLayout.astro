@@ -1,6 +1,7 @@
 ---
 import Menu from '@/components/menu/menu.astro'
 import Footer from '@/components/footer.astro'
+import Container from '@/components/container.astro'
 
 interface Props {
   title: string
@@ -22,13 +23,11 @@ const { title } = Astro.props
   </head>
   <body class="dark">
     <div class="min-h-screen flex flex-col items-center w-full">
-      <div class="w-full sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-7xl mt-8 px-8">
+      <Container class="mt-8">
         <Menu />
-      </div>
+      </Container>
       <slot />
-      <div class="w-full mt-12">
-        <Footer />
-      </div>
+      <Footer />
     </div>
   </body>
 </html>

@@ -15,7 +15,7 @@ import runNode from './_images/run-node.svg'
 ---
 
 <Layout title="Mining & Running Node | Monero">
-  <Container>
+  <Container class="mt-8">
     <TwoColsLayout rightClass="md:justify-center" hasRightImage>
       <Fragment slot="left">
         <h2>Mining Monero</h2>
@@ -26,7 +26,7 @@ import runNode from './_images/run-node.svg'
         </p>
       </Fragment>
       <Fragment slot="right">
-        <Image src={mining} alt="mining" />
+        <Image src={mining} alt="mining" class="max-h-[350px]" />
       </Fragment>
     </TwoColsLayout>
   </Container>
@@ -50,7 +50,7 @@ import runNode from './_images/run-node.svg'
   </Container>
 
   <Container>
-    <div class="space-y-6">
+    <div class="space-y-12">
       <OneColLayout>
         <h2>Solo vs Pool Mining</h2>
         <p>
@@ -59,7 +59,7 @@ import runNode from './_images/run-node.svg'
           as this type of independent mining is the most effective way to increase the robustness of the Monero network.
         </p>
       </OneColLayout>
-      <TwoColsLayout hasLeftImage hasRightImage>
+      <TwoColsLayout hasLeftImage hasRightImage wrapperClass="space-y-12">
         <Fragment slot="left">
           <div class="flex flex-col items-center space-y-6">
             <Image src={soloMining} alt="solo mining" />
@@ -128,7 +128,7 @@ import runNode from './_images/run-node.svg'
   <Container>
     <TwoColsLayout rightClass="min-w-full md:min-w-0">
       <Fragment slot="left">
-        <h3>Hardware</h3>
+        <h2>Hardware</h2>
         <p>
           Monero can be mined on both CPUs and GPUs, but the latter is much less efficient than the former. You can get
           an idea of how your hardware performs compared to others, using the following link (some results might be out
@@ -142,7 +142,7 @@ import runNode from './_images/run-node.svg'
         </div>
       </Fragment>
       <Fragment slot="right">
-        <h3>Software</h3>
+        <h2>Software</h2>
         <p>
           There are several options when it comes to mining software. As already said, to solo mine, the CLI or GUI
           wallets can be used (CPU only). If you want to mine to a pool or mine with a GPU, you'll need dedicated
@@ -165,7 +165,7 @@ import runNode from './_images/run-node.svg'
   </Container>
 
   <Container>
-    <TwoColsLayout>
+    <TwoColsLayout hasRightImage>
       <Fragment slot="left">
         <h2>Running a Node</h2>
         <p>
@@ -174,7 +174,7 @@ import runNode from './_images/run-node.svg'
           out of your way, you could run an open remote node, to allow other people to connect to it.
         </p>
         <p>We have several guides to help you run and configure your node:</p>
-        <div class="space-y-2">
+        <div class="space-y-2 text-start">
           <div class="flex items-center">
             <a href="#" class="font-bold text-primary">Running a node on VPS</a>
             <Image src={arrowRight} alt="link" class="w-5 ml-2" />

@@ -5,21 +5,21 @@ import Button from '@/components/button.astro'
 import TwoColsLayout from '@/components/twoColsLayout.astro'
 ---
 
-<TwoColsLayout hasRightImage>
+<TwoColsLayout hasRightImage wrapperClass="items-center">
   <Fragment slot="left">
     <h1 class="text-4xl font-semibold leading-tight">
-      <span class="text-primary">Monero</span> is private, decentralized money
+      <span class="text-primary text-4xl">Monero</span> is private, decentralized money
     </h1>
     <p>
       Built with a focus on privacy, Monero is a community driven cryptocurrency that keeps your finances confidential
       and secure.
     </p>
-    <div class="flex gap-x-4 md:gap-x-6">
+    <div class="flex gap-x-4 md:gap-x-6 justify-center md:justify-start">
       <Button>Discover Monero</Button>
       <Button intent="outline">Join Communities</Button>
     </div>
   </Fragment>
   <Fragment slot="right">
-    <Image src={hero} alt="Hero" />
+    <Image src={hero} alt="Hero" class="max-h-[450px]" />
   </Fragment>
 </TwoColsLayout>
