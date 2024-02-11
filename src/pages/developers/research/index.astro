@@ -1,11 +1,135 @@
 ---
+import { Image } from 'astro:assets'
 import '@/assets/styles/globals.css'
 import Layout from '@/layouts/baseLayout.astro'
 import Container from '@/components/container.astro'
+import TwoColsLayout from '@/components/twoColsLayout.astro'
+import research from './_images/research.svg'
+import arrowRight from '@/assets/images/arrow-right.svg'
+import chevron from '@/assets/images/chevron.svg'
 ---
 
 <Layout title="Research | Monero">
   <Container>
-    <div>Research</div>
+    <TwoColsLayout hasRightImage>
+      <Fragment slot="left">
+        <h2>Monero Research Lab</h2>
+        <p>
+          Monero is not only committed to making a fungible currency, but also to continued research into the realm of
+          financial privacy as it involves cryptocurrencies. Below you'll find the work of our very own Monero Research
+          Lab, with more papers to come. To contact the Monero Research Lab, please email
+          <a href="mailto:lab@getmonero.org" class="text-primary">lab@getmonero.org</a>
+        </p>
+      </Fragment>
+      <Fragment slot="right">
+        <Image src={research} alt="research" />
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container intent="fullWidth" class="border-t border-b border-secondary flex items-center justify-center">
+    <Container class="mt-0 py-6">
+      <div class="flex justify-between">
+        {
+          [
+            { title: 'Published Papers', link: '#' },
+            { title: 'White Papers', link: '#' },
+            { title: 'Books', link: '#' },
+            { title: 'Cheatsheets', link: '#' },
+          ].map((item, index) => (
+            <a class="flex flex-col space-y-1 group" href={item.link}>
+              <span class="group-hover:text-primary">{item.title}</span>
+              <Image src={arrowRight} alt="arrow right" class="filter-white group-hover:filter-primary" />
+            </a>
+          ))
+        }
+      </div>
+    </Container>
+  </Container>
+
+  <Container>
+    <h2 class="mb-8">Published Papers</h2>
+    <div class="flex flex-wrap gap-6">
+      {
+        [
+          {
+            title: 'IACR 2020/312: Arcturus: efficient proofs for confidential transactions',
+            authors: 'Sarang Noether',
+            publicationDate: '15 March 2020',
+            abstract: `Confidential transactions are used in distributed digital assets to demonstrate the balance of 
+              values hidden in commitments, while retaining signer ambiguity. Previous work describes a signer-ambiguous proof
+              of knowledge of the opening of commitments to zero at the same index across multiple public commitment
+              sets and the evaluation of a verifiable random function used as a linking tag, and uses this to build a
+              linkable ring signature called Triptych that can be used as a building block for a confidential
+              transaction model. In this work, we extend Triptych to build Arcturus, a proving system that proves
+              knowledge of openings of multiple commitments to zero within a single set, correct construction of a
+              verifiable random function evaluated at each opening, and value balance across a separate list of
+              commitments within a single proof. While soundness depends on a novel dual discrete-logarithm hardness
+              assumption, we use data from the Monero blockchain to show that Arcturus can be used in a confidential
+              transaction model to provide faster total batch verification time than other state-of-the-art
+              constructions without a trusted setup.`,
+          },
+          {
+            title: 'IACR 2020/312: Arcturus: efficient proofs for confidential transactions',
+            authors: 'Sarang Noether',
+            publicationDate: '15 March 2020',
+            abstract: `Confidential transactions are used in distributed digital assets to demonstrate the balance of 
+              values hidden in commitments, while retaining signer ambiguity. Previous work describes a signer-ambiguous proof
+              of knowledge of the opening of commitments to zero at the same index across multiple public commitment
+              sets and the evaluation of a verifiable random function used as a linking tag, and uses this to build a
+              linkable ring signature called Triptych that can be used as a building block for a confidential
+              transaction model. In this work, we extend Triptych to build Arcturus, a proving system that proves
+              knowledge of openings of multiple commitments to zero within a single set, correct construction of a
+              verifiable random function evaluated at each opening, and value balance across a separate list of
+              commitments within a single proof. While soundness depends on a novel dual discrete-logarithm hardness
+              assumption, we use data from the Monero blockchain to show that Arcturus can be used in a confidential
+              transaction model to provide faster total batch verification time than other state-of-the-art
+              constructions without a trusted setup.`,
+          },
+          {
+            title: 'IACR 2020/312: Arcturus: efficient proofs for confidential transactions',
+            authors: 'Sarang Noether',
+            publicationDate: '15 March 2020',
+            abstract: `Confidential transactions are used in distributed digital assets to demonstrate the balance of 
+              values hidden in commitments, while retaining signer ambiguity. Previous work describes a signer-ambiguous proof
+              of knowledge of the opening of commitments to zero at the same index across multiple public commitment
+              sets and the evaluation of a verifiable random function used as a linking tag, and uses this to build a
+              linkable ring signature called Triptych that can be used as a building block for a confidential
+              transaction model. In this work, we extend Triptych to build Arcturus, a proving system that proves
+              knowledge of openings of multiple commitments to zero within a single set, correct construction of a
+              verifiable random function evaluated at each opening, and value balance across a separate list of
+              commitments within a single proof. While soundness depends on a novel dual discrete-logarithm hardness
+              assumption, we use data from the Monero blockchain to show that Arcturus can be used in a confidential
+              transaction model to provide faster total batch verification time than other state-of-the-art
+              constructions without a trusted setup.`,
+          },
+        ].map(({ title, authors, publicationDate, abstract }) => (
+          <div class="bg-card p-8 rounded-2xl w-[calc(50%-12px)]">
+            <h3 class="font-normal font-sans">{title}</h3>
+            <div class="flex my-6">
+              <div class="flex flex-1 flex-col">
+                <span class="text-xs">Authors</span>
+                <span class="font-bold text-sm">{authors}</span>
+              </div>
+              <div class="flex flex-1 flex-col">
+                <span class="text-xs">Published Date</span>
+                <span class="font-bold text-sm">{publicationDate}</span>
+              </div>
+            </div>
+            <div class="flex justify-between mb-4">
+              <div class="flex items-center">
+                <span class="text-primary text-sm font-bold mr-2">Abstract</span>
+                <Image src={chevron} alt="arrow right" />
+              </div>
+              <a href="#" class="flex items-center">
+                <span class="text-primary text-sm font-bold mr-2">Read Papers</span>
+                <Image src={arrowRight} alt="arrow right" />
+              </a>
+            </div>
+            <p class="font-normal text-sm">{abstract}</p>
+          </div>
+        ))
+      }
+    </div>
   </Container>
 </Layout>

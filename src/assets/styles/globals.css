@@ -89,4 +89,13 @@
     -ms-overflow-style: none; /* For Internet Explorer and Edge */
     scrollbar-width: none; /* For Firefox */
   }
+
+  /* Filter colors for SVGs */
+  .filter-primary {
+    filter: invert(47%) sepia(99%) saturate(1900%) hue-rotate(347deg) brightness(96%) contrast(96%);
+  }
+
+  .filter-white {
+    filter: saturate(0%) brightness(200%);
+  }
 }
