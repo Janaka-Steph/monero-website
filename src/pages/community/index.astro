@@ -1,0 +1,323 @@
+---
+import '@/assets/styles/globals.css'
+import Layout from '@/layouts/baseLayout.astro'
+import Container from '@/components/container.astro'
+import TwoColsLayout from "../../components/twoColsLayout.astro";
+import {Image} from "astro:assets";
+import community from "./_images/community.svg";
+import reddit from "@/assets/images/socialNetworks/reddit.svg"
+import twitter from "@/assets/images/socialNetworks/twitter.svg"
+import facebook from "@/assets/images/socialNetworks/facebook.svg"
+import telegram from "@/assets/images/socialNetworks/telegram.svg"
+import communityWorkgroup from "./_images/community_workgroup.svg"
+import core from "./_images/core.svg"
+import development from "./_images/development.svg"
+import website from "./_images/website.svg"
+import localization from "./_images/localization.svg"
+import outreach from "./_images/outreach.svg"
+import research from "./_images/research.svg"
+import space from "./_images/space.svg"
+import policy from "./_images/policy.svg"
+import malware from "./_images/malware.svg"
+import Button from "../../components/button.astro";
+import link from '@/assets/images/external-link.svg'
+---
+
+<Layout title="Community | Monero - secure, private, untraceable">
+  <Container>
+    <TwoColsLayout hasRightImage>
+      <Fragment slot="left">
+        <h2>Monero Community</h2>
+        <p>
+          The Monero Project is at the forefront of cryptocurrency privacy and security. Its Research Lab and
+          Development Team are constantly working on new, innovative technologies. Since its launch, the project has
+          received contributions from over 500 developers located all around the world.
+        </p>
+        <p>
+          You can find general purpose communities of Monero in its social networks:
+        </p>
+        <div class="flex gap-x-8">
+          <Image src={reddit} alt="reddit"/>
+          <Image src={twitter} alt="twitter"/>
+          <Image src={facebook} alt="facebook"/>
+          <Image src={telegram} alt="telegram"/>
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <Image src={community} alt="community" class="max-h-[450px] w-auto"/>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <div class="flex flex-col">
+      <div class="w-full md:w-2/3 lg:w-1/2 space-y-6">
+        <h2>Monero Workgroups</h2>
+        <p>
+          Workgroups are formed by community members who join forces to achieve a common goal. They have different
+          structures and goals. On this page we list some of the more active workgroups and some tips to get you
+          started, if you wish to contribute to any of them.
+        </p>
+      </div>
+    </div>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <Fragment slot="left">
+        <div class="flex justify-center md:justify-start">
+          <Image src={core} alt="core" class="w-14"/>
+        </div>
+        <h2>Core Team</h2>
+        <p>
+          As stewards of the project, the Core Team manages and maintains infrastructure where centralization cannot be
+          avoided (domains, website, github repositories...). Its members act as mediators as they see fit and aim to
+          weigh consensus in the community, perpetuating the quality interactions that made Monero the successful
+          project it is today. The Core Team does not and has never received any financial compensation.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          The Core Team is a closed workgroup; it's not possible to join unless invited.
+        </p>
+        <Button>Join #monero-dev</Button>
+        <div class="space-y-2">
+          <h4 class="bold">E-mail:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="#" target="_blank" class="font-bold text-primary">dev@monero.org</a>
+          </div>
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <div class="flex justify-center md:justify-start">
+          <Image src={communityWorkgroup} alt="community" class="w-14"/>
+        </div>
+        <h2>Community Workgroup</h2>
+        <p>
+          This workgroup is used by the community to organize and coordinate. Start here if you are a non-coder who
+          wants to contribute to Monero.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          The best way to start contributing to this workgroup is to join the chatrooms and introduce yourself, stating
+          your interests and the skills you would like to offer to the community.
+        </p>
+        <Button>Join #monero-community</Button>
+        <div class="space-y-2">
+          <h4 class="bold">Website:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://www.communityworkgroup.org" target="_blank" class="font-bold text-primary">www.communityworkgroup.org</a>
+          </div>
+        </div>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <Fragment slot="left">
+        <div class="flex justify-center md:justify-start">
+          <Image src={development} alt="development" class="w-14"/>
+        </div>
+        <h2>Development Workgroup</h2>
+        <p>
+          This workgroup unites Monero developers working on the wallets and daemon maintained by the Core Team. It
+          consists of two main parts: the CLI team and the GUI team. These teams coordinate using two different
+          chatrooms.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          It's a good idea to take a look at open issues on both repositories to have an idea of what could be fixed or
+          improved. Both codebases, but especially the core repository, can be quite challenging, so it's suggested to
+          first write in the chatroom introducing yourself, your skills, and to what you wish to contribute.
+        </p>
+        <div class="flex gap-x-4">
+          <Button>Join #monero-dev</Button>
+          <Button intent="secondary">Join #monero-gui</Button>
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <div class="flex justify-center md:justify-start">
+          <Image src={website} alt="website" class="w-14"/>
+        </div>
+        <h2>Website Workgroup</h2>
+        <p>
+          This dev-focused workgroup coordinates the development of the website. Most members are also part of the
+          Development Workgroup. The Website Workgroup was mostly created to have discussions related to the website all
+          in one place.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          It's always a good idea to join the chatroom and talk directly with the members of the workgroup, but if you
+          prefer to get started by yourself, take a look at the readme in the GitHub repository. It contains step by
+          step instructions to edit every single part of this website.
+        </p>
+        <Button>Join #monero-site</Button>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <Fragment slot="left">
+        <div class="flex justify-center md:justify-start">
+          <Image src={localization} alt="localization" class="w-14"/>
+        </div>
+        <h2>Localization Workgroup</h2>
+        <p>
+          One of the oldest Monero Workgroups, it's formed by contributors working on translating Monero-related
+          software and documentation. It's strongly suggested to contact the workgroup before working on translations.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          Contact the workgroup on the chatroom or open an issue on the GitHub repository. You can also start
+          translating immediately using the Weblate platform. Just make sure to read the guide for translators first.
+        </p>
+        <Button>Join #monero-translations</Button>
+        <div class="space-y-2">
+          <h4 class="bold">Localization Platform:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://translate.getmonero.org" target="_blank" class="font-bold text-primary">translate.getmonero.org</a>
+          </div>
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <div class="flex justify-center md:justify-start">
+          <Image src={outreach} alt="outreach" class="w-14"/>
+        </div>
+        <h2>Monero Outreach</h2>
+        <p>
+          This workgroup is focused on getting Monero out there, gathering artists, writers, and anyone who wishes to
+          make Monero known to the world.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          The members of the Outreach Workgroup heavily use Telegram for coordination and matrix/freenode in minor part.
+          If you want to help, you can contact the workgroup on one of these channels. It is quite structured, so you'll
+          probably be directed to a coordinator.
+        </p>
+        <Button>Join #monero-outreach</Button>
+        <div class="space-y-2">
+          <h4 class="bold">Telegram Chat:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://t.me/monerooutreach" target="_blank" class="font-bold text-primary">t.me/monerooutreach</a>
+          </div>
+        </div>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <Fragment slot="left">
+        <div class="flex justify-center md:justify-start">
+          <Image src={research} alt="research" class="w-14"/>
+        </div>
+        <h2>Research Lab</h2>
+        <p>
+          As the name suggests, the Monero Research Lab is the workgroup focused on Monero-related research. It's formed
+          by scientists finding ways to improve Monero's protocol and features. Most of the protocol improvements that
+          make Monero amazing, like CLSAG and Bulletproofs, are the result of the efforts of this workgroup.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          Join the chatroom below and state your interests and your skills. Research is always ongoing, and somebody
+          will point you in the right direction.
+        </p>
+        <Button>Join #monero-research-lab</Button>
+      </Fragment>
+      <Fragment slot="right">
+        <div class="flex justify-center md:justify-start">
+          <Image src={space} alt="space" class="w-14"/>
+        </div>
+        <h2>Monero Space</h2>
+        <p>
+          Monero Space is an active, project-focused Monero workgroup that provides services to the Monero community. It
+          hosts popular resources and organizes events such as Monero Meet.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          The workgroup can be contacted by writing to their chatroom on Freenode.
+        </p>
+        <Button>Join #monero-space</Button>
+        <div class="space-y-2">
+          <h4 class="bold">Website:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://monero.space" target="_blank" class="font-bold text-primary">monero.space</a>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <h4 class="bold">Forum:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://forum.monero.space" target="_blank" class="font-bold text-primary">forum.monero.space</a>
+          </div>
+        </div>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <Fragment slot="left">
+        <div class="flex justify-center md:justify-start">
+          <Image src={policy} alt="policy" class="w-14"/>
+        </div>
+        <h2>Monero Policy Working Group</h2>
+        <p>
+          Monero Policy Working Group is a loosely formed quorum of individuals with an interest in interacting with
+          regulators, policy makers, and the wider financial services sector to ensure broad understanding of Monero’s
+          component technologies, especially with regards to its compatibility with evolving regulatory and compliance
+          requirements.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          If you would like to take part or follow policy discussions, join matrix/freenode chatroom.
+        </p>
+        <Button>Join #monero-policy</Button>
+        <div class="space-y-2">
+          <h4 class="bold">E-mail:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="mailto:policy@getmonero.org" target="_blank"
+               class="font-bold text-primary">policy@getmonero.org</a>
+          </div>
+        </div>
+        <div class="space-y-2">
+          <h4 class="bold">Website:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://moneropolicy.org" target="_blank" class="font-bold text-primary">moneropolicy.org</a>
+          </div>
+        </div>
+      </Fragment>
+      <Fragment slot="right">
+        <div class="flex justify-center md:justify-start">
+          <Image src={malware} alt="malware" class="w-14"/>
+        </div>
+        <h2>Malware Response Workgroup</h2>
+        <p>
+          The Malware Response Workgroup provides resources and live support for multiple types of Monero-related
+          malware.
+        </p>
+        <h3 class="text-xl font-semibold">Where to start</h3>
+        <p>
+          Most of the activity of this workgroup happens on the IRC chat. If you wish to contribute, just join the
+          channel to ask questions or provide support.
+        </p>
+        <Button>Join #monero-mrw</Button>
+        <div class="space-y-2">
+          <h4 class="bold">Website:</h4>
+          <div class="flex items-end">
+            <Image src={link} alt="link" class="w-5 mr-2"/>
+            <a href="https://mrw.getmonero.org" target="_blank" class="font-bold text-primary">mrw.getmonero.org</a>
+          </div>
+        </div>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+</Layout>

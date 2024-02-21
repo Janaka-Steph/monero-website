@@ -12,7 +12,7 @@ const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false, wrap
 
 <div
   class:list={[
-    'flex flex-wrap gap-x-8 md:gap-x-16 lg:gap-x-32 md:flex-nowrap justify-between space-y-8 md:space-y-0',
+    'flex flex-wrap gap-x-8 md:gap-x-16 lg:gap-x-32 md:flex-nowrap justify-between space-y-28 md:space-y-0',
     wrapperClass,
   ]}
 >
@@ -33,7 +33,7 @@ const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false, wrap
         <slot name="right" />
       </div>
     ) : (
-      <div class:list={['flex-1 space-y-6 text-center md:text-left', rightClass]}>
+      <div class:list={['md:flex-1 space-y-6 text-center md:text-left', rightClass]}>
         <slot name="right" />
       </div>
     )
