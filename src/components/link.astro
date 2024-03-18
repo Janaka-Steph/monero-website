@@ -1,0 +1,45 @@
+---
+import { tv } from 'tailwind-variants'
+import { Image } from 'astro:assets'
+import arrowRight from '@/assets/images/arrow-right.svg'
+import link from '@/assets/images/external-link.svg'
+
+interface Props {
+  class?: string
+  href: string
+  iconLeft?: boolean
+}
+
+const linkVariants = tv({
+  base: 'flex',
+  variants: {
+    intent: {
+      iconLeft: 'items-end justify-center md:justify-start',
+      iconRight: 'items-center justify-center md:justify-start',
+    },
+  },
+  defaultVariants: {
+    intent: 'iconRight',
+  },
+})
+
+const { intent, class: className, iconLeft, href = '#', ...rest } = Astro.props
+---
+
+{
+  intent === 'iconLeft' ? (
+    <div class={linkVariants({ intent, class: className })}>
+      <Image src={link} alt="link" class="w-5 mr-2" />
+      <a href={href} class="font-bold text-primary" {...rest}>
+        <slot />
+      </a>
+    </div>
+  ) : (
+    <div class={linkVariants({ intent, class: className })}>
+      <a href={href} class="font-bold text-primary" {...rest}>
+        <slot />
+      </a>
+      <Image src={arrowRight} alt="link" class="w-5 ml-2" />
+    </div>
+  )
+}

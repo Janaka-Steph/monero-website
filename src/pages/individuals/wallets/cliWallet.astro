@@ -1,0 +1,194 @@
+---
+import TwoColsLayout from '../../../components/twoColsLayout.astro'
+import Link from '../../../components/link.astro'
+import { Image } from 'astro:assets'
+import OneColLayout from '../../../components/oneColLayout.astro'
+import Container from '../../../components/container.astro'
+import Button from '../../../components/button.astro'
+import hashVerification from './_images/hash_verification.svg'
+import cliWallet from './_images/cli.svg'
+import apple from '@/assets/images/platforms/apple.svg'
+import microsoft from '@/assets/images/platforms/microsoft.svg'
+import linux from '@/assets/images/platforms/linux.svg'
+import freeBSD from '@/assets/images/platforms/freebsd.svg'
+import android from '@/assets/images/platforms/android.svg'
+import github from '@/assets/images/github.svg'
+import archive from '@/assets/images/archive.svg'
+---
+
+<Container>
+  <TwoColsLayout hasRightImage>
+    <Fragment slot="left">
+      <h2 id="cli-wallet">Monero CLI Wallet</h2>
+      <p>
+        An open-source command line interface (CLI) wallet developed by the Monero community, completely free to use,
+        best suited for developers, intermediate, and advanced users. The CLI wallet gives you the total control over
+        your Monero node and funds. Highly customizable and includes various analysis tools, as well as an HTTP RPC and
+        ZeroMQ interface.
+      </p>
+      <Button>CLI Wallet Instructions</Button>
+    </Fragment>
+    <Fragment slot="right">
+      <Image src={cliWallet} alt="archive" class="max-h-[450px] w-auto sm:scale-110" />
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <div class="grid gap-10 md:gap-20 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+    <div>
+      <h3>Local or remote node</h3>
+      <p>Use your own copy of the blockchain or a publicly available one</p>
+    </div>
+    <div>
+      <h3>Hardware Wallet Compatibility</h3>
+      <p>Compatible with hardware wallets such Trezor and Ledger</p>
+    </div>
+    <div>
+      <h3>Pay-for-RPC</h3>
+      <p>A new feature that allows node operators to get rewarded when their node is used</p>
+    </div>
+    <div>
+      <h3>Transactions over Tor/I2P</h3>
+      <p>For an additional layer of privacy</p>
+    </div>
+    <div>
+      <h3>RPC Wallet and Daemon</h3>
+      <p>Included in the archive</p>
+    </div>
+    <div>
+      <h3>Blockchain pruning</h3>
+      <p>Not enough disk space? Just use pruning to download only 1/3 of the blockchain</p>
+    </div>
+    <div>
+      <h3>Bootstrap node</h3>
+      <p>
+        Use a remote node while downloading the blockchain locally, this will allow you to use Monero immediately and
+        switch to your local node once it's completely synced
+      </p>
+    </div>
+  </div>
+</Container>
+
+<Container>
+  <OneColLayout class="lg:w-2/3">
+    <h3>Download Monero CLI Wallet</h3>
+    <p>
+      Current Version: 0.17.2.2 - Oxygen Orion
+      <Button intent="link" onclick="window.open('https://example.com', '_blank')">(release notes)</Button>
+    </p>
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-3 lg:grid-cols-5">
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={microsoft} alt="microsoft" class="w-8" />
+        <div>
+          <p>Windows 64-bit</p>
+        </div>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={microsoft} alt="microsoft" class="w-8" />
+        <div>
+          <p>Windows 32-bit</p>
+        </div>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={apple} alt="apple" class="w-8" />
+        <p>Linux 64-bit</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={apple} alt="apple" class="w-8" />
+        <p>Linux 32-bit</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={apple} alt="apple" class="w-8" />
+        <p>Linux ARMv8</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={apple} alt="apple" class="w-8" />
+        <p>Linux ARMv7</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={linux} alt="linux" class="w-8" />
+        <p>Mac OS X 64-bit</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={android} alt="linux" class="w-8" />
+        <p>Android ARMv8</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={android} alt="linux" class="w-8" />
+        <p>Android ARMv7</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={freeBSD} alt="linux" class="w-8" />
+        <p>FreeBSD 64-bit</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <a href="#" target="_blank" class="flex">
+        <Image src={github} alt="github" class="w-5 mr-2" />
+        <p>Source Code</p>
+      </a>
+      <a href="#" target="_blank" class="flex">
+        <Image src={archive} alt="archive" class="w-5 mr-2" />
+        <p>Source Code (archive)</p>
+      </a>
+    </div>
+  </OneColLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout>
+    <Fragment slot="left">
+      <h3>Linux Distributions</h3>
+      <p>
+        There are also packages available for multiple Linux distributions. You can find them in the following link:
+      </p>
+      <Link target="_blank" iconLeft>Linux Distributions</Link>
+    </Fragment>
+    <Fragment slot="right">
+      <h3>Antivirus Notice</h3>
+      <p>Be aware that some antiviruses and firewalls may flag the Monero executables and archives as malware.</p>
+      <Link target="_blank" iconLeft>FAQ</Link>
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout hasRightImage>
+    <Fragment slot="left">
+      <h3>Hash Verification</h3>
+      <p>
+        You are strongly advised to verify the hashes of the archive you downloaded. This will confirm that the files
+        you downloaded perfectly match the files uploaded by the Monero development workgroup. Please don't
+        underestimate this step, a corrupted archive could result in lost funds. Always verify your downloads!
+      </p>
+      <Button>Verification Guide</Button>
+    </Fragment>
+    <Fragment slot="right">
+      <Image src={hashVerification} alt="archive" class="max-h-[450px] w-auto scale-110" />
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout hasRightImage>
+    <Fragment slot="left">
+      <h3>Help and Support</h3>
+      <p>
+        If you are experiencing issues or you need more info, feel free to reach out to the community. You can find the
+        GUI team at #monero-gui, or else check out the Hangouts page for a more complete list of contacts and chatrooms.
+      </p>
+      <Button>Join Communities</Button>
+    </Fragment>
+  </TwoColsLayout>
+</Container>

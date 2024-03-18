@@ -18,7 +18,7 @@ const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false, wrap
 >
   {
     hasLeftImage ? (
-      <div class:list={['flex-1 min-w-full md:min-w-0 flex justify-center md:justify-start', leftClass]}>
+      <div class:list={['flex-1 min-w-full md:min-w-0 flex justify-center md:justify-end', leftClass]}>
         <slot name="left" />
       </div>
     ) : (

@@ -1,0 +1,172 @@
+---
+import TwoColsLayout from '../../../components/twoColsLayout.astro'
+import Link from '../../../components/link.astro'
+import OneColLayout from '../../../components/oneColLayout.astro'
+import { Image } from 'astro:assets'
+import Container from '../../../components/container.astro'
+import Button from '../../../components/button.astro'
+import simpleMode from './_images/simple_mode.svg'
+import advancedMode from './_images/advanced_mode.svg'
+import guiWallet from './_images/gui.svg'
+import hashVerification from './_images/hash_verification.svg'
+import apple from '@/assets/images/platforms/apple.svg'
+import microsoft from '@/assets/images/platforms/microsoft.svg'
+import linux from '@/assets/images/platforms/linux.svg'
+import github from '@/assets/images/github.svg'
+import archive from '@/assets/images/archive.svg'
+---
+
+<Container>
+  <OneColLayout>
+    <h2 id="gui-wallet">Monero GUI Wallet</h2>
+    <p>
+      An open-source graphical user interface (GUI) wallet developed by the Monero community, completely free to use,
+      suitable for both beginners and advanced users and available in 30 languages.
+    </p>
+  </OneColLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout>
+    <Fragment slot="left">
+      <div class="flex flex-col items-center text-center">
+        <Image src={simpleMode} alt="simple mode" class="w-14" />
+        <h3 class="mt-6 mb-4">Simple Mode</h3>
+        <p>
+          Created for less technical users who only want to use Monero in the easiest and quickest way possible. Open
+          the wallet, automatically connect to a remote node, send/receive XMR, done!
+        </p>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <div class="flex flex-col items-center text-center">
+        <Image src={advancedMode} alt="advanced mode" class="w-14" />
+        <h3 class="mt-6 mb-4">Advanced Mode</h3>
+        <p>
+          With all the advanced features you could need. Ideal for seasoned Monero users who prefer to have full control
+          of their wallet and node
+        </p>
+      </div>
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout hasRightImage leftClass="flex flex-col justify-between">
+    <Fragment slot="left">
+      <div>
+        <h3>Merchant Page</h3>
+        <p>Provide payment via Monero and receive XMR for your business, easily</p>
+      </div>
+      <div>
+        <h3>Hardware Wallet Compatibility</h3>
+        <p>Compatible with hardware wallets such Trezor and Ledger</p>
+      </div>
+      <div>
+        <h3>Blockchain Pruning</h3>
+        <p>Blockchain pruning. Not enough disk space? Just use pruning to download only 1/3 of the blockchain</p>
+      </div>
+      <div>
+        <Button>GUI Wallet Instructions</Button>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <Image src={guiWallet} alt="GUI wallet" class="max-h-[450px] w-auto" />
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <OneColLayout class="lg:w-2/3">
+    <h3>Download Monero GUI Wallet</h3>
+    <p>
+      Current Version: 0.17.2.2 - Oxygen Orion
+      <Button intent="link" onclick="window.open('https://example.com', '_blank')">(release notes)</Button>
+    </p>
+    <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={microsoft} alt="microsoft" class="w-8" />
+        <div>
+          <p>Windows 64-bit</p>
+          <p>(Installer)</p>
+        </div>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={microsoft} alt="microsoft" class="w-8" />
+        <div>
+          <p>Windows 64-bit</p>
+          <p>(zip)</p>
+        </div>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={apple} alt="apple" class="w-8" />
+        <p>Linux 64-bit</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+      <div class="bg-card p-4 rounded-2xl flex flex-col items-center justify-between min-h-40 md:min-h-48">
+        <Image src={linux} alt="linux" class="w-8" />
+        <p>Mac OS X 64-bit</p>
+        <Button intent="outline" size="md">Download</Button>
+      </div>
+    </div>
+    <div class="space-y-4">
+      <a href="#" target="_blank" class="flex">
+        <Image src={github} alt="github" class="w-5 mr-2" />
+        <p>Source Code</p>
+      </a>
+      <a href="#" target="_blank" class="flex">
+        <Image src={archive} alt="archive" class="w-5 mr-2" />
+        <p>Source Code (archive)</p>
+      </a>
+    </div>
+  </OneColLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout>
+    <Fragment slot="left">
+      <h3>Linux Distributions</h3>
+      <p>
+        There are also packages available for multiple Linux distributions. You can find them in the following link:
+      </p>
+      <Link target="_blank" iconLeft>Linux Distributions</Link>
+    </Fragment>
+    <Fragment slot="right">
+      <h3>Antivirus Notice</h3>
+      <p>Be aware that some antiviruses and firewalls may flag the Monero executables and archives as malware.</p>
+      <Link target="_blank" iconLeft>FAQ</Link>
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout hasRightImage>
+    <Fragment slot="left">
+      <h3>Hash Verification</h3>
+      <p>
+        You are strongly advised to verify the hashes of the archive you downloaded. This will confirm that the files
+        you downloaded perfectly match the files uploaded by the Monero development workgroup. Please don't
+        underestimate this step, a corrupted archive could result in lost funds. Always verify your downloads!
+      </p>
+      <Button>Verification Guide</Button>
+    </Fragment>
+    <Fragment slot="right">
+      <Image src={hashVerification} alt="archive" class="max-h-[450px] w-auto scale-110" />
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout hasRightImage>
+    <Fragment slot="left">
+      <h3>Help and Support</h3>
+      <p>
+        If you are experiencing issues or you need more info, feel free to reach out to the community. You can find the
+        GUI team at #monero-gui, or else check out the Hangouts page for a more complete list of contacts and chatrooms.
+      </p>
+      <Button>Join Communities</Button>
+    </Fragment>
+  </TwoColsLayout>
+</Container>

@@ -1,0 +1,44 @@
+---
+import '@/assets/styles/globals.css'
+import Layout from '@/layouts/baseLayout.astro'
+import Container from '@/components/container.astro'
+import { Image } from 'astro:assets'
+import TwoColsLayout from '@/components/twoColsLayout.astro'
+import wallets from './_images/wallets.svg'
+import StripeMenu from '@/components/stripeMenu.astro'
+import GUIWallet from './guiWallet.astro'
+import CLIWallet from './cliWallet.astro'
+import MobileLightWallets from './mobileLightWallets.astro'
+---
+
+<Layout title="Wallets | Monero - secure, private, untraceable">
+  <Container class="mt-8 lg:mt-0">
+    <TwoColsLayout hasRightImage wrapperClass="items-center">
+      <Fragment slot="left">
+        <h2>Monero Wallets</h2>
+        <p>
+          Whether you want to send or receive money from someone or accept money as payment for your business, you can
+          use Monero wallet. It’s a powerful and easy to use wallet that can safely store your funds and send or receive
+          funds for you.
+        </p>
+      </Fragment>
+      <Fragment slot="right">
+        <Image src={wallets} alt="wallets" class="max-h-[450px] w-auto" />
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <StripeMenu
+    data={[
+      { title: 'Monero GUI Wallet', link: '#gui-wallet' },
+      { title: 'Monero CLI Wallet', link: '#cli-wallet' },
+      { title: 'Mobile & Light', link: '#mobile-light-wallets' },
+      { title: 'Hardware Wallets', link: '#hardware-wallets' },
+      { title: 'Import Blockchain', link: '#import-blockchain' },
+    ]}
+  />
+
+  <GUIWallet />
+  <CLIWallet />
+  <MobileLightWallets />
+</Layout>

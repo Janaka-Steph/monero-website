@@ -7,6 +7,7 @@ import TwoColsLayout from '@/components/twoColsLayout.astro'
 import research from './_images/research.svg'
 import arrowRight from '@/assets/images/arrow-right.svg'
 import chevron from '@/assets/images/chevron.svg'
+import StripeMenu from '@/components/stripeMenu.astro'
 ---
 
 <Layout title="Research | Monero">
@@ -27,25 +28,14 @@ import chevron from '@/assets/images/chevron.svg'
     </TwoColsLayout>
   </Container>
 
-  <Container intent="fullWidth" class="border-t border-b border-secondary flex items-center justify-center">
-    <Container class="mt-0 py-6">
-      <div class="flex justify-between">
-        {
-          [
-            { title: 'Published Papers', link: '#' },
-            { title: 'White Papers', link: '#' },
-            { title: 'Books', link: '#' },
-            { title: 'Cheatsheets', link: '#' },
-          ].map((item, index) => (
-            <a class="flex flex-col space-y-1 group" href={item.link}>
-              <span class="group-hover:text-primary">{item.title}</span>
-              <Image src={arrowRight} alt="arrow right" class="filter-white group-hover:filter-primary" />
-            </a>
-          ))
-        }
-      </div>
-    </Container>
-  </Container>
+  <StripeMenu
+    data={[
+      { title: 'Published Papers', link: '#' },
+      { title: 'White Papers', link: '#' },
+      { title: 'Books', link: '#' },
+      { title: 'Cheatsheets', link: '#' },
+    ]}
+  />
 
   <Container>
     <h2 class="mb-8">Published Papers</h2>

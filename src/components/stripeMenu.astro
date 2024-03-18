@@ -1,0 +1,29 @@
+---
+import Container from '@/components/container.astro'
+import { Image } from 'astro:assets'
+import arrowRight from '@/assets/images/arrow-right.svg'
+
+interface Props {
+  data: {
+    title: string
+    link: string
+  }[]
+}
+
+const { data } = Astro.props
+---
+
+<Container intent="fullWidth" class="border-t border-b border-secondary flex items-center justify-center">
+  <Container class="mt-0 py-6">
+    <div class="flex justify-between gap-x-4">
+      {
+        data.map((item, index) => (
+          <a class="flex flex-col space-y-1 group justify-between" href={item.link}>
+            <span class="group-hover:text-primary">{item.title}</span>
+            <Image src={arrowRight} alt="arrow right" class="filter-white group-hover:filter-primary" />
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</Container>

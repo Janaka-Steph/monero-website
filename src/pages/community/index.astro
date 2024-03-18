@@ -2,25 +2,26 @@
 import '@/assets/styles/globals.css'
 import Layout from '@/layouts/baseLayout.astro'
 import Container from '@/components/container.astro'
-import TwoColsLayout from "../../components/twoColsLayout.astro";
-import {Image} from "astro:assets";
-import community from "./_images/community.svg";
-import reddit from "@/assets/images/socialNetworks/reddit.svg"
-import twitter from "@/assets/images/socialNetworks/twitter.svg"
-import facebook from "@/assets/images/socialNetworks/facebook.svg"
-import telegram from "@/assets/images/socialNetworks/telegram.svg"
-import communityWorkgroup from "./_images/community_workgroup.svg"
-import core from "./_images/core.svg"
-import development from "./_images/development.svg"
-import website from "./_images/website.svg"
-import localization from "./_images/localization.svg"
-import outreach from "./_images/outreach.svg"
-import research from "./_images/research.svg"
-import space from "./_images/space.svg"
-import policy from "./_images/policy.svg"
-import malware from "./_images/malware.svg"
-import Button from "../../components/button.astro";
+import TwoColsLayout from '../../components/twoColsLayout.astro'
+import { Image } from 'astro:assets'
+import community from './_images/community.svg'
+import reddit from '@/assets/images/socialNetworks/reddit.svg'
+import twitter from '@/assets/images/socialNetworks/twitter.svg'
+import facebook from '@/assets/images/socialNetworks/facebook.svg'
+import telegram from '@/assets/images/socialNetworks/telegram.svg'
+import communityWorkgroup from './_images/community_workgroup.svg'
+import core from './_images/core.svg'
+import development from './_images/development.svg'
+import website from './_images/website.svg'
+import localization from './_images/localization.svg'
+import outreach from './_images/outreach.svg'
+import research from './_images/research.svg'
+import space from './_images/space.svg'
+import policy from './_images/policy.svg'
+import malware from './_images/malware.svg'
+import Button from '../../components/button.astro'
 import link from '@/assets/images/external-link.svg'
+import Link from '../../components/link.astro'
 ---
 
 <Layout title="Community | Monero - secure, private, untraceable">
@@ -33,18 +34,16 @@ import link from '@/assets/images/external-link.svg'
           Development Team are constantly working on new, innovative technologies. Since its launch, the project has
           received contributions from over 500 developers located all around the world.
         </p>
-        <p>
-          You can find general purpose communities of Monero in its social networks:
-        </p>
+        <p>You can find general purpose communities of Monero in its social networks:</p>
         <div class="flex gap-x-8">
-          <Image src={reddit} alt="reddit"/>
-          <Image src={twitter} alt="twitter"/>
-          <Image src={facebook} alt="facebook"/>
-          <Image src={telegram} alt="telegram"/>
+          <Image src={reddit} alt="reddit" />
+          <Image src={twitter} alt="twitter" />
+          <Image src={facebook} alt="facebook" />
+          <Image src={telegram} alt="telegram" />
         </div>
       </Fragment>
       <Fragment slot="right">
-        <Image src={community} alt="community" class="max-h-[450px] w-auto"/>
+        <Image src={community} alt="community" class="max-h-[450px] w-auto" />
       </Fragment>
     </TwoColsLayout>
   </Container>
@@ -66,7 +65,7 @@ import link from '@/assets/images/external-link.svg'
     <TwoColsLayout>
       <Fragment slot="left">
         <div class="flex justify-center md:justify-start">
-          <Image src={core} alt="core" class="w-14"/>
+          <Image src={core} alt="core" class="w-14" />
         </div>
         <h2>Core Team</h2>
         <p>
@@ -76,21 +75,16 @@ import link from '@/assets/images/external-link.svg'
           project it is today. The Core Team does not and has never received any financial compensation.
         </p>
         <h3 class="text-xl font-semibold">Where to start</h3>
-        <p>
-          The Core Team is a closed workgroup; it's not possible to join unless invited.
-        </p>
+        <p>The Core Team is a closed workgroup; it's not possible to join unless invited.</p>
         <Button>Join #monero-dev</Button>
         <div class="space-y-2">
           <h4 class="bold">E-mail:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="#" target="_blank" class="font-bold text-primary">dev@monero.org</a>
-          </div>
+          <Link target="_blank" intent="iconLeft">dev@monero.org</Link>
         </div>
       </Fragment>
       <Fragment slot="right">
         <div class="flex justify-center md:justify-start">
-          <Image src={communityWorkgroup} alt="community" class="w-14"/>
+          <Image src={communityWorkgroup} alt="community" class="w-14" />
         </div>
         <h2>Community Workgroup</h2>
         <p>
@@ -105,10 +99,9 @@ import link from '@/assets/images/external-link.svg'
         <Button>Join #monero-community</Button>
         <div class="space-y-2">
           <h4 class="bold">Website:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://www.communityworkgroup.org" target="_blank" class="font-bold text-primary">www.communityworkgroup.org</a>
-          </div>
+          <Link href="https://www.communityworkgroup.org" target="_blank" intent="iconLeft"
+            >www.communityworkgroup.org</Link
+          >
         </div>
       </Fragment>
     </TwoColsLayout>
@@ -118,7 +111,7 @@ import link from '@/assets/images/external-link.svg'
     <TwoColsLayout>
       <Fragment slot="left">
         <div class="flex justify-center md:justify-start">
-          <Image src={development} alt="development" class="w-14"/>
+          <Image src={development} alt="development" class="w-14" />
         </div>
         <h2>Development Workgroup</h2>
         <p>
@@ -139,7 +132,7 @@ import link from '@/assets/images/external-link.svg'
       </Fragment>
       <Fragment slot="right">
         <div class="flex justify-center md:justify-start">
-          <Image src={website} alt="website" class="w-14"/>
+          <Image src={website} alt="website" class="w-14" />
         </div>
         <h2>Website Workgroup</h2>
         <p>
@@ -162,7 +155,7 @@ import link from '@/assets/images/external-link.svg'
     <TwoColsLayout>
       <Fragment slot="left">
         <div class="flex justify-center md:justify-start">
-          <Image src={localization} alt="localization" class="w-14"/>
+          <Image src={localization} alt="localization" class="w-14" />
         </div>
         <h2>Localization Workgroup</h2>
         <p>
@@ -177,15 +170,12 @@ import link from '@/assets/images/external-link.svg'
         <Button>Join #monero-translations</Button>
         <div class="space-y-2">
           <h4 class="bold">Localization Platform:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://translate.getmonero.org" target="_blank" class="font-bold text-primary">translate.getmonero.org</a>
-          </div>
+          <Link href="https://translate.getmonero.org" target="_blank" intent="iconLeft">translate.getmonero.org</Link>
         </div>
       </Fragment>
       <Fragment slot="right">
         <div class="flex justify-center md:justify-start">
-          <Image src={outreach} alt="outreach" class="w-14"/>
+          <Image src={outreach} alt="outreach" class="w-14" />
         </div>
         <h2>Monero Outreach</h2>
         <p>
@@ -201,10 +191,7 @@ import link from '@/assets/images/external-link.svg'
         <Button>Join #monero-outreach</Button>
         <div class="space-y-2">
           <h4 class="bold">Telegram Chat:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://t.me/monerooutreach" target="_blank" class="font-bold text-primary">t.me/monerooutreach</a>
-          </div>
+          <Link href="https://t.me/monerooutreach" target="_blank" intent="iconLeft">t.me/monerooutreach</Link>
         </div>
       </Fragment>
     </TwoColsLayout>
@@ -214,7 +201,7 @@ import link from '@/assets/images/external-link.svg'
     <TwoColsLayout>
       <Fragment slot="left">
         <div class="flex justify-center md:justify-start">
-          <Image src={research} alt="research" class="w-14"/>
+          <Image src={research} alt="research" class="w-14" />
         </div>
         <h2>Research Lab</h2>
         <p>
@@ -231,7 +218,7 @@ import link from '@/assets/images/external-link.svg'
       </Fragment>
       <Fragment slot="right">
         <div class="flex justify-center md:justify-start">
-          <Image src={space} alt="space" class="w-14"/>
+          <Image src={space} alt="space" class="w-14" />
         </div>
         <h2>Monero Space</h2>
         <p>
@@ -239,23 +226,15 @@ import link from '@/assets/images/external-link.svg'
           hosts popular resources and organizes events such as Monero Meet.
         </p>
         <h3 class="text-xl font-semibold">Where to start</h3>
-        <p>
-          The workgroup can be contacted by writing to their chatroom on Freenode.
-        </p>
+        <p>The workgroup can be contacted by writing to their chatroom on Freenode.</p>
         <Button>Join #monero-space</Button>
         <div class="space-y-2">
           <h4 class="bold">Website:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://monero.space" target="_blank" class="font-bold text-primary">monero.space</a>
-          </div>
+          <Link href="https://monero.space" target="_blank" intent="iconLeft">monero.space</Link>
         </div>
         <div class="space-y-2">
           <h4 class="bold">Forum:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://forum.monero.space" target="_blank" class="font-bold text-primary">forum.monero.space</a>
-          </div>
+          <Link href="https://forum.monero.space" target="_blank" intent="iconLeft">forum.monero.space</Link>
         </div>
       </Fragment>
     </TwoColsLayout>
@@ -265,7 +244,7 @@ import link from '@/assets/images/external-link.svg'
     <TwoColsLayout>
       <Fragment slot="left">
         <div class="flex justify-center md:justify-start">
-          <Image src={policy} alt="policy" class="w-14"/>
+          <Image src={policy} alt="policy" class="w-14" />
         </div>
         <h2>Monero Policy Working Group</h2>
         <p>
@@ -275,29 +254,20 @@ import link from '@/assets/images/external-link.svg'
           requirements.
         </p>
         <h3 class="text-xl font-semibold">Where to start</h3>
-        <p>
-          If you would like to take part or follow policy discussions, join matrix/freenode chatroom.
-        </p>
+        <p>If you would like to take part or follow policy discussions, join matrix/freenode chatroom.</p>
         <Button>Join #monero-policy</Button>
         <div class="space-y-2">
           <h4 class="bold">E-mail:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="mailto:policy@getmonero.org" target="_blank"
-               class="font-bold text-primary">policy@getmonero.org</a>
-          </div>
+          <Link href="mailto:policy@getmonero.org" target="_blank" intent="iconLeft">policy@getmonero.org</Link>
         </div>
         <div class="space-y-2">
           <h4 class="bold">Website:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://moneropolicy.org" target="_blank" class="font-bold text-primary">moneropolicy.org</a>
-          </div>
+          <Link href="https://moneropolicy.org" target="_blank" intent="iconLeft">moneropolicy.org</Link>
         </div>
       </Fragment>
       <Fragment slot="right">
         <div class="flex justify-center md:justify-start">
-          <Image src={malware} alt="malware" class="w-14"/>
+          <Image src={malware} alt="malware" class="w-14" />
         </div>
         <h2>Malware Response Workgroup</h2>
         <p>
@@ -312,10 +282,7 @@ import link from '@/assets/images/external-link.svg'
         <Button>Join #monero-mrw</Button>
         <div class="space-y-2">
           <h4 class="bold">Website:</h4>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2"/>
-            <a href="https://mrw.getmonero.org" target="_blank" class="font-bold text-primary">mrw.getmonero.org</a>
-          </div>
+          <Link href="https://mrw.getmonero.org" target="_blank" intent="iconLeft">mrw.getmonero.org</Link>
         </div>
       </Fragment>
     </TwoColsLayout>

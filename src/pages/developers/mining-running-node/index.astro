@@ -12,6 +12,7 @@ import poolMining from './_images/pool-mining.svg'
 import link from '@/assets/images/external-link.svg'
 import arrowRight from '@/assets/images/arrow-right.svg'
 import runNode from './_images/run-node.svg'
+import Link from '../../../components/link.astro'
 ---
 
 <Layout title="Mining & Running Node | Monero">
@@ -110,16 +111,12 @@ import runNode from './_images/run-node.svg'
           </p>
         </div>
         <div class="flex-1 min-w-full md:min-w-0 space-y-2">
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2" />
-            <a href="https://miningpoolstats.stream" target="_blank" class="font-bold text-primary">
-              miningpoolstats.stream
-            </a>
-          </div>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2" />
-            <a href="https://pools.xmr.wiki" target="_blank" class="font-bold text-primary">pools.xmr.wiki</a>
-          </div>
+          <Link href="https://miningpoolstats.stream" class="justify-start" target="_blank" intent="iconLeft"
+            >miningpoolstats.stream</Link
+          >
+          <Link href="https://pools.xmr.wiki" class="justify-start" target="_blank" intent="iconLeft"
+            >pools.xmr.wiki</Link
+          >
         </div>
       </div>
     </div>
@@ -134,12 +131,9 @@ import runNode from './_images/run-node.svg'
           an idea of how your hardware performs compared to others, using the following link (some results might be out
           of date):
         </p>
-        <div class="flex items-end">
-          <Image src={link} alt="link" class="w-5 mr-2" />
-          <a href="https://monerobenchmarks.info" target="_blank" class="font-bold text-primary"
-            >monerobenchmarks.info</a
-          >
-        </div>
+        <Link href="https://monerobenchmarks.info" target="_blank" class="justify-start" intent="iconLeft"
+          >monerobenchmarks.info</Link
+        >
       </Fragment>
       <Fragment slot="right">
         <h2>Software</h2>
@@ -149,16 +143,13 @@ import runNode from './_images/run-node.svg'
           software. Miners supporting Monero:
         </p>
         <div class="space-y-2">
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2" />
-            <a href="https://xmrig.com" target="_blank" class="font-bold text-primary">XMRig</a>
-          </div>
-          <div class="flex items-end">
-            <Image src={link} alt="link" class="w-5 mr-2" />
-            <a href="https://github.com/cryptonote-social/csminer" target="_blank" class="font-bold text-primary"
-              >CSminer</a
-            >
-          </div>
+          <Link href="https://xmrig.com" target="_blank" class="justify-start" intent="iconLeft">XMRig</Link>
+          <Link
+            href="https://github.com/cryptonote-social/csminer"
+            target="_blank"
+            class="justify-start"
+            intent="iconLeft">CSminer</Link
+          >
         </div>
       </Fragment>
     </TwoColsLayout>
@@ -175,18 +166,9 @@ import runNode from './_images/run-node.svg'
         </p>
         <p>We have several guides to help you run and configure your node:</p>
         <div class="space-y-2 text-start">
-          <div class="flex items-center">
-            <a href="#" class="font-bold text-primary">Running a node on VPS</a>
-            <Image src={arrowRight} alt="link" class="w-5 ml-2" />
-          </div>
-          <div class="flex items-center">
-            <a href="#" class="font-bold text-primary">Run a node through I2P with I2P-zero</a>
-            <Image src={arrowRight} alt="link" class="w-5 ml-2" />
-          </div>
-          <div class="flex items-center">
-            <a href="#" class="font-bold text-primary">Set up a wallet (using a remote node) on Tails</a>
-            <Image src={arrowRight} alt="link" class="w-5 ml-2" />
-          </div>
+          <Link class="justify-start">Running a node on VPS</Link>
+          <Link class="justify-start">Run a node through I2P with I2P-zero</Link>
+          <Link class="justify-start">Set up a wallet (using a remote node) on Tails</Link>
         </div>
       </Fragment>
       <Fragment slot="right">

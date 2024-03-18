@@ -1,16 +1,11 @@
+const plugin = require('tailwindcss/plugin')
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   prefix: '',
   theme: {
-    container: {
-      center: true,
-      padding: '2rem',
-      screens: {
-        '2xl': '1400px',
-      },
-    },
     extend: {
       colors: {
         background: 'hsl(var(--background) / <alpha-value>)',
@@ -30,6 +25,9 @@ export default {
         },
         card: {
           DEFAULT: 'hsl(var(--card) / <alpha-value>)',
+        },
+        table: {
+          DEFAULT: 'hsl(var(--table) / <alpha-value>)',
         },
       },
       keyframes: {
@@ -71,7 +69,26 @@ export default {
       boxShadow: {
         menu: '0 200px 100px 50px hsl(0,0%,9%)',
       },
+      screens: {
+        '2xl': '1400px',
+      },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [
+    require('tailwindcss-animate'),
+    plugin(function ({ matchUtilities, theme }) {
+      matchUtilities(
+        {
+          'auto-fill': (value) => ({
+            gridTemplateColumns: `repeat(auto-fill, minmax(min(${value}, 100%), 1fr))`,
+          }),
+          'auto-fit': (value) => ({
+            gridTemplateColumns: `repeat(auto-fit, minmax(min(${value}, 100%), 1fr))`,
+          }),
+        },
+        {
+          values: theme('width', {}),
+        }
+      )
+    }),],
 }

@@ -1,0 +1,198 @@
+---
+import TwoColsLayout from '../../../components/twoColsLayout.astro'
+import { Image } from 'astro:assets'
+import Container from '../../../components/container.astro'
+import Button from '../../../components/button.astro'
+import mobileLight from './_images/mobile_light.svg'
+import importBlockchain from './_images/import_blockchain.svg'
+import Table from '../../../components/table.astro'
+
+import apple from '@/assets/images/platforms/apple.svg'
+import microsoft from '@/assets/images/platforms/microsoft.svg'
+import android from '@/assets/images/platforms/android.svg'
+import web from '@/assets/images/platforms/web.svg'
+import cake from '@/assets/images/wallets/cake.svg'
+import monerujo from '@/assets/images/wallets/monerujo.svg'
+import mymonero from '@/assets/images/wallets/mymonero.svg'
+import edge from '@/assets/images/wallets/edge.svg'
+import ledger from '@/assets/images/wallets/ledger.svg'
+import trezor from '@/assets/images/wallets/trezor.svg'
+import ledgerWhite from '@/assets/images/wallets/ledger-white.svg'
+import trezorWhite from '@/assets/images/wallets/trezor-white.svg'
+import hardwareWallet from './_images/hardware_wallet.svg'
+
+const softwareWalletsTableData = {
+  headers: ['', 'Wallet Type', 'Mobile Platforms', 'Desktop Platforms', 'Source Code', 'Website'],
+  rows: [
+    [
+      { textWithIcon: { icon: cake, text: 'Cake Wallet' } },
+      'Local Sync',
+      {
+        images: [
+          { src: android, alt: 'Android' },
+          { src: apple, alt: 'Apple' },
+        ],
+      },
+      '',
+      { link: { href: 'https://github.com/cakewallet', text: 'Github' } },
+      { link: { href: 'https://cakewallet.com', text: 'Visit Website' } },
+    ],
+    [
+      { textWithIcon: { icon: monerujo, text: 'Monerujo' } },
+      'Local Sync',
+      {
+        images: [{ src: android, alt: 'Android' }],
+      },
+      '',
+      { link: { href: 'https://github.com/monerujo-app', text: 'Github' } },
+      { link: { href: 'https://www.monerujo.io/', text: 'Visit Website' } },
+    ],
+    [
+      { textWithIcon: { icon: mymonero, text: 'My Monero' } },
+      'Remote Sync',
+      {
+        images: [
+          { src: android, alt: 'Android' },
+          { src: apple, alt: 'Apple' },
+        ],
+      },
+      {
+        images: [
+          { src: web, alt: 'Web' },
+          { src: android, alt: 'Android' },
+          { src: apple, alt: 'Apple' },
+          { src: microsoft, alt: 'Microsoft' },
+        ],
+      },
+      { link: { href: 'https://github.com/mymonero', text: 'Github' } },
+      { link: { href: 'https://mymonero.com', text: 'Visit Website' } },
+    ],
+    [
+      { textWithIcon: { icon: edge, text: 'Edge' } },
+      'Remote Sync',
+      {
+        images: [
+          { src: android, alt: 'Android' },
+          { src: apple, alt: 'Apple' },
+        ],
+      },
+      '',
+      { link: { href: 'https://github.com/edge', text: 'Github' } },
+      { link: { href: 'https://edge.app', text: 'Visit Website' } },
+    ],
+  ],
+}
+
+const hardwareWalletsTableData = {
+  headers: ['', 'Model', 'Min. Firmware Version', 'Wallets'],
+  rows: [
+    [
+      { textWithIcon: { icon: ledgerWhite, text: 'Ledger' } },
+      'Nano S',
+      '1.6.1',
+      'Monero GUI, Monero CLI, Monerujo, Feather (beta)',
+    ],
+    [
+      { textWithIcon: { icon: ledgerWhite, text: 'Ledger' } },
+      'Nano X',
+      '1.2.4-4',
+      'Monero GUI, Monero CLI, Monerujo, Feather (beta)',
+    ],
+    [
+      { textWithIcon: { icon: trezorWhite, text: 'Trezor' } },
+      'Model T',
+      '2.3.4',
+      'Monero GUI, Monero CLI, Feather (beta)',
+    ],
+  ],
+}
+---
+
+<Container>
+  <TwoColsLayout hasLeftImage>
+    <Fragment slot="left">
+      <Image src={mobileLight} alt="mobile and light wallets" class="max-h-[450px] w-auto" />
+    </Fragment>
+    <Fragment slot="right">
+      <h2 id="mobile-light-wallets">Mobile & Light Wallets</h2>
+      <p>
+        The following are mobile or light wallets that are deemed safe by respected members of the community. If there
+        is a wallet that is not on here, you can request the community check it out. You can join our communities <Button
+          intent="link">here</Button
+        >.
+      </p>
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <TwoColsLayout>
+    <Fragment slot="left">
+      <h3>Local synchronization Wallets</h3>
+      <p>
+        These wallets connect to remote nodes and scan the blockchain on your device, without sharing any key with the
+        nodes. They provide higher privacy, but require more time synchronizing, since missing blocks will be scanned
+        only when the wallet is opened.
+      </p>
+    </Fragment>
+    <Fragment slot="right">
+      <h3>Remote synchronization (lightweight)</h3>
+      <p>
+        These wallets share your private view key with a remote server, which continuously scans the blockchain looking
+        for your transactions. They are faster to use, but your privacy can be lessened if you don't control the remote
+        server.
+      </p>
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <Table data={softwareWalletsTableData} />
+</Container>
+
+<Container>
+  <TwoColsLayout hasRightImage wrapperClass="items-center">
+    <Fragment slot="left">
+      <h2 id="hardware-wallets">Hardware Wallets</h2>
+      <p>
+        Hardware wallets are cryptographically secure devices that help keep your coins safe. Monero is currently
+        supported by Ledger Nano S/X and Trezor Model T.
+      </p>
+      <div class="flex gap-x-4 justify-center md:justify-start">
+        <Button intent="secondary">
+          <Image src={ledger} alt="ledger" class="w-5 h-5" />
+          <span class="ml-2">Ledger Guide</span>
+        </Button>
+        <Button intent="secondary">
+          <Image src={trezor} alt="trezor" class="w-5 h-5" />
+          <span class="ml-2">Trezor Guide</span>
+        </Button>
+      </div>
+    </Fragment>
+    <Fragment slot="right">
+      <Image src={hardwareWallet} alt="hardware wallet" class="max-h-[450px] w-auto lg:scale-125 lg:-translate-x-10" />
+    </Fragment>
+  </TwoColsLayout>
+</Container>
+
+<Container>
+  <h3 class="text-center my-6">Supported Hardware Wallets Details</h3>
+  <Table data={hardwareWalletsTableData} />
+</Container>
+
+<Container>
+  <TwoColsLayout hasLeftImage wrapperClass="items-center">
+    <Fragment slot="left">
+      <Image src={importBlockchain} alt="import blockchain" class="max-h-[450px] w-auto" />
+    </Fragment>
+    <Fragment slot="right">
+      <h2 id="import-blockchain">Import Blockchain</h2>
+      <p>
+        If you'd prefer to use a raw blockchain instead of syncing from scratch, you can use the most current bootstrap.
+        It is typically much faster to sync from scratch, however, and it also takes a lot less RAM. If you wish to
+        proceed anyway, take a look at the following guide for step-by-step instructions for Windows.
+      </p>
+      <Button>Importing Monero Blockchain Guide</Button>
+    </Fragment>
+  </TwoColsLayout>
+</Container>

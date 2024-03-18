@@ -17,6 +17,7 @@
     --muted-foreground: 215.4 16.3% 46.9%;
 
     --card: 0 0% 16%;
+    --table: 0 0% 13%;
 
     --radius: 0.5rem;
   }
@@ -36,6 +37,7 @@
     --muted-foreground: 0 0% 100%;
 
     --card: 0 0% 16%;
+    --table: 0 0% 13%;
   }
 }
 

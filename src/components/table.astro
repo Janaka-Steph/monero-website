@@ -1,0 +1,66 @@
+---
+import { Image } from 'astro:assets'
+
+interface Props {
+  data: {
+    headers: string[]
+    rows: (
+      | string
+      | { link: { href: string; text: string } }
+      | { images: { src: string; alt: string }[] }
+      | { textWithIcon: { icon: string; text: string } }
+    )[][]
+  }
+}
+
+const { data } = Astro.props
+---
+
+<div class="overflow-x-auto">
+  <table class="w-full border-separate border-spacing-y-3">
+    <thead>
+      <tr>
+        {data.headers.map((header) => <th>{header}</th>)}
+      </tr>
+    </thead>
+    <tbody class="space-y-4">
+      {
+        data.rows.map((row) => (
+          <tr>
+            {row.map((cell, index) => (
+              <td
+                class:list={[
+                  'bg-table px-8 py-4 text-center whitespace-nowrap',
+                  { 'rounded-l-xl': index === 0 },
+                  { 'rounded-r-xl': index === row.length - 1 },
+                ]}
+              >
+                {
+                  // Check if the cell is a link, images or string
+                  typeof cell === 'string' ? (
+                    cell
+                  ) : 'link' in cell ? (
+                    <a href={cell.link.href} class="text-primary" target="_blank">
+                      {cell.link.text}
+                    </a>
+                  ) : 'images' in cell ? (
+                    <div class="flex gap-x-4 justify-center items-center whitespace-nowrap min-w-max px-6">
+                      {cell.images.map((image) => (
+                        <Image src={image.src} alt={image.alt} width="20" height="20" />
+                      ))}
+                    </div>
+                  ) : 'textWithIcon' in cell ? (
+                    <div class="flex gap-x-4 justify-start items-center whitespace-nowrap min-w-max">
+                      <Image src={cell.textWithIcon.icon} width="20" height="20" alt={cell.textWithIcon.text} />
+                      <span>{cell.textWithIcon.text}</span>
+                    </div>
+                  ) : null
+                }
+              </td>
+            ))}
+          </tr>
+        ))
+      }
+    </tbody>
+  </table>
+</div>
