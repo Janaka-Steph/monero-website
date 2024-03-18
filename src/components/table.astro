@@ -1,4 +1,5 @@
 ---
+import type { ImageMetadata } from 'astro'
 import { Image } from 'astro:assets'
 
 interface Props {
@@ -7,8 +8,8 @@ interface Props {
     rows: (
       | string
       | { link: { href: string; text: string } }
-      | { images: { src: string; alt: string }[] }
-      | { textWithIcon: { icon: string; text: string } }
+      | { images: { src: ImageMetadata; alt: string }[] }
+      | { textWithIcon: { icon: ImageMetadata; text: string } }
     )[][]
   }
 }

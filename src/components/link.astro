@@ -7,7 +7,8 @@ import link from '@/assets/images/external-link.svg'
 interface Props {
   class?: string
   href: string
-  iconLeft?: boolean
+  intent?: 'iconLeft' | 'iconRight'
+  [key: string]: any
 }
 
 const linkVariants = tv({
@@ -23,7 +24,7 @@ const linkVariants = tv({
   },
 })
 
-const { intent, class: className, iconLeft, href = '#', ...rest } = Astro.props
+const { intent, class: className, href, ...rest } = Astro.props
 ---
 
 {

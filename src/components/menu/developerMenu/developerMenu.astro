@@ -1,5 +1,4 @@
 ---
-import { Image } from 'astro:assets'
 import Container from '@/components/container.astro'
 import MenuItem from '../menuItem.astro'
 import MenuSubItem from '../menuSubItem.astro'
@@ -21,6 +20,7 @@ import chat from './chat.svg'
           icon={file}
           title="Documents"
           description="Collection of guides, documentation and useful resources for developers"
+          link="/developers/documents"
         />
         <MenuSubItem icon={github} />
       </div>
@@ -50,6 +50,7 @@ import chat from './chat.svg'
           icon={refreshSqare}
           title="Project Updates"
           description="News and notices on Monero’s updates and releases"
+          link="/developers/project-updates"
         />
         <MenuSubItem icon={chat} />
       </div>
