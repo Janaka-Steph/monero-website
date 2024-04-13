@@ -1,0 +1,169 @@
+---
+import '@/assets/styles/globals.css'
+import Layout from '@/layouts/baseLayout.astro'
+import Container from '@/components/container.astro'
+import { Image } from 'astro:assets'
+import OneColLayout from '@/components/oneColLayout.astro'
+import TwoColsLayout from '@/components/twoColsLayout.astro'
+import Link from '@/components/link.astro'
+import discover from './_images/discover.svg'
+import different from './_images/different.svg'
+import anonymous from './_images/anonymous.svg'
+import transactions from './_images/transactions.svg'
+import experts from './_images/experts.svg'
+import wallet from '@/assets/images/icons/wallet.svg'
+import document from '@/assets/images/icons/document.svg'
+import chat from '@/assets/images/icons/chat.svg'
+import transfer from '@/assets/images/icons/transfer.svg'
+import file from '@/assets/images/icons/file.svg'
+import lab from '@/assets/images/icons/lab.svg'
+import nodes from '@/assets/images/icons/nodes.svg'
+import refreshSquare from '@/assets/images/icons/refresh-square.svg'
+---
+
+<Layout title="Discover Monero | Monero - secure, private, untraceable">
+  <Container class="mt-8">
+    <TwoColsLayout hasRightImage centered>
+      <Fragment slot="left">
+        <h2>Discover Monero</h2>
+        <p>
+          In this section you can find info and guides on everything related to Monero. There are also external
+          resources listed below that can help you get used to Monero. Remember you can always join monero communities
+          for more support and help.
+        </p>
+      </Fragment>
+      <Image src={discover} alt="discover" slot="right" />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <div class="w-full flex flex-col justify-center items-center space-y-6">
+      <h2>Monero: The Essentials</h2>
+      <video
+        autoplay={false}
+        controls={true}
+        loop={false}
+        muted={false}
+        poster="/videos/generic-poster.png"
+        class="w-full sm:w-4/5 md:w-3/5 xl:w-1/2"
+      >
+        <source src="/videos/monero-the-essentials.m4v" type="video/mp4" />
+      </video>
+    </div>
+  </Container>
+
+  <Container>
+    <TwoColsLayout hasLeftImage centered>
+      <Image src={different} alt="different" slot="left" />
+      <Fragment slot="right">
+        <h2>What makes Monero different?</h2>
+        <p>
+          The majority of existing cryptocurrencies, including Bitcoin and Ethereum, have transparent blockchains.
+          Transactions can be verified and/or traced by anyone in the world. This means that the sending and receiving
+          addresses of these transactions could potentially be linked to real-world identities.
+        </p>
+        <p>
+          Monero, on the other hand, uses various privacy-enhancing technologies to ensure the anonymity of its users.
+        </p>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout hasRightImage centered>
+      <Fragment slot="left">
+        <h2>Anonymous by default</h2>
+        <p>
+          Unlike selectively transparent alternatives (e.g. Zcash), Monero is the only cryptocurrency where every user
+          is anonymous by default. The sender, receiver, and amount of every single transaction are hidden through the
+          use of three important technologies: Stealth Addresses, Ring Signatures, and RingCT.
+        </p>
+        <p>
+          Because every transaction is private, Monero cannot be traced. This makes it a true, fungible currency.
+          Merchants and individuals accepting Monero do not need to worry about blacklisted or tainted coins.
+        </p>
+      </Fragment>
+      <Image src={anonymous} alt="anonymous" slot="right" />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout hasLeftImage centered>
+      <Image src={transactions} alt="transactions" slot="left" />
+      <Fragment slot="right">
+        <h2>Fast, inexpensive transactions across the world</h2>
+        <p>
+          With Monero, there are no wire transfer or check clearing fees, no multi-day holding periods, and no
+          fraudulent chargebacks. Because Monero is decentralized, it is not constrained by any particular legal
+          jurisdiction and provides safety from capital control.
+        </p>
+      </Fragment>
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout hasRightImage centered>
+      <Fragment slot="left">
+        <h2>A community of experts from around the world</h2>
+        <p>
+          The Monero Project is at the forefront of cryptocurrency privacy and security. Its Research Lab and
+          Development Team are constantly working on new, innovative technologies. Since its launch, the project has
+          received contributions from over 500 developers located all around the world.
+        </p>
+        <p>
+          Numerous forums and chat channels are available for anyone to join, and the community is always welcoming new
+          members.
+        </p>
+      </Fragment>
+      <Image src={experts} alt="experts" slot="right" />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <OneColLayout class="lg:w-4/5">
+      <h2>Get Started with Monero</h2>
+      <div class="grid gap-4 grid-cols-2 lg:grid-cols-4">
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={wallet} alt="wallet" class="w-8" />
+          <p class="text-start text-sm">Download Monero wallet and start using it instantly</p>
+          <Link href="/individuals/wallets">Download Wallet</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={document} alt="document" class="w-8" />
+          <p class="text-start text-sm">Checkout Monero guides for more help</p>
+          <Link href="#">View Guides</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={chat} alt="chat" class="w-8" />
+          <p class="text-start text-sm">Become part of the ever growing Monero community</p>
+          <Link href="/community">Join Communities</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={transfer} alt="transfer" class="w-8" />
+          <p class="text-start text-sm">View a list of products and services that accept Monero</p>
+          <Link href="#">Products & Services</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={file} alt="file" class="w-8" />
+          <p class="text-start text-sm">All the information you need to get started developing for Monero</p>
+          <Link href="#">Developer Guides</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={lab} alt="lab" class="w-8" />
+          <p class="text-start text-sm">View all the research work that has been done on Monero and it’s technology</p>
+          <Link href="/developers/research">Go to Research Lab</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={nodes} alt="nodes" class="w-8" />
+          <p class="text-start text-sm">Contribute to Monero network by mining or running a node</p>
+          <Link href="/developers/mining-running-node">Mine / Run a Node</Link>
+        </div>
+        <div class="p-4 flex flex-col items-start justify-between min-h-44">
+          <Image src={refreshSquare} alt="refreshSquare" class="w-8" />
+          <p class="text-start text-sm">Read the latest updates and news on Monero</p>
+          <Link href="/blog">View Blog</Link>
+        </div>
+      </div>
+    </OneColLayout>
+  </Container>
+</Layout>

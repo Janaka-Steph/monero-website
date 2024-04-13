@@ -5,7 +5,7 @@ import Button from '@/components/button.astro'
 import TwoColsLayout from '@/components/twoColsLayout.astro'
 ---
 
-<TwoColsLayout hasRightImage wrapperClass="items-center">
+<TwoColsLayout hasRightImage centered>
   <Fragment slot="left">
     <h1 class="text-4xl font-semibold leading-tight">
       <span class="text-primary text-4xl">Monero</span> is private, decentralized money
@@ -19,7 +19,5 @@ import TwoColsLayout from '@/components/twoColsLayout.astro'
       <Button intent="outline">Join Communities</Button>
     </div>
   </Fragment>
-  <Fragment slot="right">
-    <Image src={hero} alt="Hero" class="max-h-[450px]" />
-  </Fragment>
+  <Image src={hero} alt="Hero" slot="right" />
 </TwoColsLayout>

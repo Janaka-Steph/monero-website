@@ -31,13 +31,13 @@ const { intent, class: className, href, ...rest } = Astro.props
   intent === 'iconLeft' ? (
     <div class={linkVariants({ intent, class: className })}>
       <Image src={link} alt="link" class="w-5 mr-2" />
-      <a href={href} class="font-bold text-primary" {...rest}>
+      <a href={href} class="whitespace-nowrap font-bold text-primary" {...rest}>
         <slot />
       </a>
     </div>
   ) : (
     <div class={linkVariants({ intent, class: className })}>
-      <a href={href} class="font-bold text-primary" {...rest}>
+      <a href={href} class="whitespace-nowrap font-bold text-primary" {...rest}>
         <slot />
       </a>
       <Image src={arrowRight} alt="link" class="w-5 ml-2" />

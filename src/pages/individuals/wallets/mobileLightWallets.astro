@@ -110,9 +110,7 @@ const hardwareWalletsTableData = {
 
 <Container>
   <TwoColsLayout hasLeftImage>
-    <Fragment slot="left">
-      <Image src={mobileLight} alt="mobile and light wallets" class="max-h-[450px] w-auto" />
-    </Fragment>
+    <Image src={mobileLight} alt="mobile and light wallets" slot="left" />
     <Fragment slot="right">
       <h2 id="mobile-light-wallets">Mobile & Light Wallets</h2>
       <p>
@@ -151,7 +149,7 @@ const hardwareWalletsTableData = {
 </Container>
 
 <Container>
-  <TwoColsLayout hasRightImage wrapperClass="items-center">
+  <TwoColsLayout hasRightImage centered>
     <Fragment slot="left">
       <h2 id="hardware-wallets">Hardware Wallets</h2>
       <p>
@@ -169,9 +167,7 @@ const hardwareWalletsTableData = {
         </Button>
       </div>
     </Fragment>
-    <Fragment slot="right">
-      <Image src={hardwareWallet} alt="hardware wallet" class="max-h-[450px] w-auto lg:scale-125 lg:-translate-x-10" />
-    </Fragment>
+    <Image src={hardwareWallet} alt="hardware wallet" class="lg:scale-125 lg:-translate-x-10" slot="right" />
   </TwoColsLayout>
 </Container>
 
@@ -181,10 +177,8 @@ const hardwareWalletsTableData = {
 </Container>
 
 <Container>
-  <TwoColsLayout hasLeftImage wrapperClass="items-center">
-    <Fragment slot="left">
-      <Image src={importBlockchain} alt="import blockchain" class="max-h-[450px] w-auto" />
-    </Fragment>
+  <TwoColsLayout hasLeftImage centered>
+    <Image src={importBlockchain} alt="import blockchain" slot="left" />
     <Fragment slot="right">
       <h2 id="import-blockchain">Import Blockchain</h2>
       <p>

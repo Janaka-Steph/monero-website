@@ -14,8 +14,8 @@ import Link from '../../../components/link.astro'
 ---
 
 <Layout title="Mining & Running Node | Monero">
-  <Container class="mt-20">
-    <TwoColsLayout rightClass="md:justify-center" hasRightImage>
+  <Container class="mt-8">
+    <TwoColsLayout rightClass="md:justify-center" hasRightImage centered>
       <Fragment slot="left">
         <h2>Mining Monero</h2>
         <p>
@@ -24,9 +24,7 @@ import Link from '../../../components/link.astro'
           pool, software, or hardware, and the content below is provided for informational purposes only.
         </p>
       </Fragment>
-      <Fragment slot="right">
-        <Image src={mining} alt="mining" class="max-h-[350px]" />
-      </Fragment>
+      <Image src={mining} alt="mining" class="max-h-[350px]" slot="right" />
     </TwoColsLayout>
   </Container>
 
@@ -58,7 +56,7 @@ import Link from '../../../components/link.astro'
           as this type of independent mining is the most effective way to increase the robustness of the Monero network.
         </p>
       </OneColLayout>
-      <TwoColsLayout hasLeftImage hasRightImage wrapperClass="space-y-12">
+      <TwoColsLayout hasLeftImage hasRightImage>
         <Fragment slot="left">
           <div class="flex flex-col items-center space-y-6">
             <Image src={soloMining} alt="solo mining" />
@@ -121,7 +119,7 @@ import Link from '../../../components/link.astro'
   </Container>
 
   <Container>
-    <TwoColsLayout rightClass="min-w-full md:min-w-0">
+    <TwoColsLayout>
       <Fragment slot="left">
         <h2>Hardware</h2>
         <p>
@@ -169,9 +167,7 @@ import Link from '../../../components/link.astro'
           <Link href="#" class="justify-start">Set up a wallet (using a remote node) on Tails</Link>
         </div>
       </Fragment>
-      <Fragment slot="right">
-        <Image src={runNode} alt="run node" />
-      </Fragment>
+      <Image src={runNode} alt="run node" slot="right" />
     </TwoColsLayout>
   </Container>
 </Layout>

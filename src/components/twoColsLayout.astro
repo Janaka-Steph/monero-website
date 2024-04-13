@@ -1,41 +1,32 @@
 ---
+import { tv } from 'tailwind-variants'
+
 interface Props {
   leftClass?: string
   rightClass?: string
   wrapperClass?: string
   hasLeftImage?: boolean
   hasRightImage?: boolean
+  centered?: boolean
 }
 
-const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false, wrapperClass } = Astro.props
+const twoColsLayout = tv({
+  slots: {
+    base: 'flex flex-wrap justify-between gap-x-8 space-y-28 md:flex-nowrap md:gap-x-16 md:space-y-0 lg:gap-x-32',
+    image: 'flex max-h-[450px] w-auto min-w-full flex-1 justify-center md:min-w-0 md:justify-end',
+    text: 'space-y-6 text-center md:flex-1 md:text-left',
+  },
+})
+
+const { base, image, text } = twoColsLayout()
+const { leftClass, rightClass, hasRightImage = false, hasLeftImage = false, wrapperClass, centered } = Astro.props
 ---
 
-<div
-  class:list={[
-    'flex flex-wrap gap-x-8 md:gap-x-16 lg:gap-x-32 md:flex-nowrap justify-between space-y-28 md:space-y-0',
-    wrapperClass,
-  ]}
->
-  {
-    hasLeftImage ? (
-      <div class:list={['flex-1 min-w-full md:min-w-0 flex justify-center md:justify-end', leftClass]}>
-        <slot name="left" />
-      </div>
-    ) : (
-      <div class:list={['flex-1 space-y-6 text-center md:text-left', leftClass]}>
-        <slot name="left" />
-      </div>
-    )
-  }
-  {
-    hasRightImage ? (
-      <div class:list={['flex-1 min-w-full md:min-w-0 flex justify-center md:justify-end', rightClass]}>
-        <slot name="right" />
-      </div>
-    ) : (
-      <div class:list={['md:flex-1 space-y-6 text-center md:text-left', rightClass]}>
-        <slot name="right" />
-      </div>
-    )
-  }
+<div class:list={[base({ class: wrapperClass }), { 'items-center': centered }]}>
+  <div class:list={[hasLeftImage ? image() : text(), leftClass]}>
+    <slot name="left" />
+  </div>
+  <div class:list={[hasRightImage ? image() : text(), rightClass]}>
+    <slot name="right" />
+  </div>
 </div>

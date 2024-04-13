@@ -13,7 +13,7 @@ import MobileLightWallets from './mobileLightWallets.astro'
 
 <Layout title="Wallets | Monero - secure, private, untraceable">
   <Container class="mt-8 lg:mt-0">
-    <TwoColsLayout hasRightImage wrapperClass="items-center">
+    <TwoColsLayout hasRightImage centered>
       <Fragment slot="left">
         <h2>Monero Wallets</h2>
         <p>
@@ -22,9 +22,7 @@ import MobileLightWallets from './mobileLightWallets.astro'
           funds for you.
         </p>
       </Fragment>
-      <Fragment slot="right">
-        <Image src={wallets} alt="wallets" class="max-h-[450px] w-auto" />
-      </Fragment>
+      <Image src={wallets} alt="wallets" slot="right" />
     </TwoColsLayout>
   </Container>
 

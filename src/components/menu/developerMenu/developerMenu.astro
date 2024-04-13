@@ -2,14 +2,14 @@
 import Container from '@/components/container.astro'
 import MenuItem from '../menuItem.astro'
 import MenuSubItem from '../menuSubItem.astro'
-import file from './file.svg'
-import flask from './flask.svg'
-import nodes from './nodes.svg'
-import refreshSqare from './refresh-square.svg'
+import file from '@/assets/images/icons/file.svg'
+import lab from '@/assets/images/icons/lab.svg'
+import nodes from '@/assets/images/icons/nodes.svg'
+import refreshSquare from '@/assets/images/icons/refresh-square.svg'
 import github from '@/assets/images/github.svg'
-import gitlab from './gitlab.svg'
-import monero from './monero.svg'
-import chat from './chat.svg'
+import gitlab from '@/assets/images/icons/gitlab.svg'
+import moneroSquare from '@/assets/images/icons/monero-square.svg'
+import chat from '@/assets/images/icons/chat.svg'
 ---
 
 <div class="absolute left-0 right-0 hidden group-hover:block hover:block pt-10 bg-background shadow-menu z-10">
@@ -27,7 +27,7 @@ import chat from './chat.svg'
 
       <div class="space-y-4">
         <MenuItem
-          icon={flask}
+          icon={lab}
           title="Research"
           description="Libraries and papers for those who are interested in researching on Monero"
           link="/developers/research"
@@ -42,12 +42,12 @@ import chat from './chat.svg'
           description="Instructions on Moner mining and running nodes on the blockchain"
           link="/developers/mining-running-node"
         />
-        <MenuSubItem icon={monero} />
+        <MenuSubItem icon={moneroSquare} />
       </div>
 
       <div class="space-y-4">
         <MenuItem
-          icon={refreshSqare}
+          icon={refreshSquare}
           title="Project Updates"
           description="News and notices on Monero’s updates and releases"
           link="/developers/project-updates"
