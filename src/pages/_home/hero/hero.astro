@@ -15,8 +15,12 @@ import TwoColsLayout from '@/components/twoColsLayout.astro'
       and secure.
     </p>
     <div class="flex gap-x-4 md:gap-x-6 justify-center md:justify-start">
-      <Button>Discover Monero</Button>
-      <Button intent="outline">Join Communities</Button>
+      <a href="/individuals/discover">
+        <Button>Discover Monero</Button>
+      </a>
+      <a href="/community">
+        <Button intent="outline">Join Communities</Button>
+      </a>
     </div>
   </Fragment>
   <Image src={hero} alt="Hero" slot="right" />
