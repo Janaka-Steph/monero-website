@@ -3,6 +3,9 @@ import { tv } from 'tailwind-variants'
 
 interface Props {
   class?: string
+  intent?: 'primary' | 'secondary' | 'outline' | 'link'
+  size?: 'default' | 'sm' | 'md' | 'lg' | 'icon'
+  onclick?: string
 }
 
 const buttonVariants = tv({
