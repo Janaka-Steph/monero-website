@@ -4,20 +4,28 @@ import Footer from '@/components/footer.astro'
 import Container from '@/components/container.astro'
 
 interface Props {
+  description: string
   title: string
 }
 
-const { title } = Astro.props
+const { description, title } = Astro.props
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="description" content="Astro description" />
+    <meta name="description" content={description} />
+    <meta property="og:image" content="/images/logo.png" />
+    <meta property="og:site_name" content="getmonero.org, The Monero Project" />
+    <meta property="og:type" content="website" />
+    <!--
+      <meta property="og:url" content="https://www.getmonero.org/get-started/what-is-monero/index.html" />
+      <meta http-equiv="onion-location" content="http://monerotoruzizulg5ttgat2emf4d6fbmiea25detrmmy7erypseyteyd.onion/get-started/what-is-monero/index.html" />
+    -->
     <meta name="viewport" content="width=device-width" />
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.png" />
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.png" />
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
