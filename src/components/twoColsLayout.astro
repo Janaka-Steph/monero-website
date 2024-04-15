@@ -12,9 +12,9 @@ interface Props {
 
 const twoColsLayout = tv({
   slots: {
-    base: 'flex flex-wrap justify-between gap-x-8 space-y-28 md:flex-nowrap md:gap-x-16 md:space-y-0 lg:gap-x-32',
+    base: 'flex flex-wrap justify-center gap-x-8 space-y-28 md:flex-nowrap md:gap-x-16 md:space-y-0 lg:gap-x-32',
     image: 'flex max-h-[450px] w-auto min-w-full flex-1 justify-center md:min-w-0 md:justify-end',
-    text: 'space-y-6 text-center md:flex-1 md:text-left',
+    text: 'min-w-[300px] space-y-6 text-center md:flex-1 md:text-left',
   },
 })
 

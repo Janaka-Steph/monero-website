@@ -4,15 +4,20 @@ import arrowCircle from '@/assets/images/arrow-circle.svg'
 
 interface Props {
   icon: any
+  link: string
+  target?: string
+  title: string
 }
 
-const { icon } = Astro.props
+const { icon, link, target, title } = Astro.props
 ---
 
-<div class="bg-secondary hover:bg-primary/80 rounded-md p-4 flex justify-between cursor-pointer">
-  <div class="flex gap-x-2 items-center">
-    <Image src={icon} alt="image" class="w-8" />
-    <span class="text-sm">GitHub</span>
+<a href={link} target={target} class="block">
+  <div class="bg-secondary hover:bg-primary/80 rounded-md p-4 flex justify-between cursor-pointer">
+    <div class="flex gap-x-2 items-center">
+      <Image src={icon} alt="image" class="w-8" />
+      <span class="text-sm">{title}</span>
+    </div>
+    <Image src={arrowCircle} alt="image" class="w-5 rotate-180" />
   </div>
-  <Image src={arrowCircle} alt="image" class="w-5 rotate-180" />
-</div>
+</a>

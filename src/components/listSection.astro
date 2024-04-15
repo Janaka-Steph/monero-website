@@ -1,0 +1,28 @@
+---
+interface Props {
+  links: { target?: string; text: string; tor?: string; url: string }[]
+  sectionTitle: string
+}
+
+const { links, sectionTitle } = Astro.props
+---
+
+<div>
+  <h2 class="mb-4">{sectionTitle}</h2>
+  <ul>
+    {
+      links.map(({ target, text, tor, url }) => (
+        <li class="text-secondary-dark mb-2">
+          <a href={url} target={target ?? '_blank'}>
+            {text}
+          </a>
+          {tor ? (
+            <a href={tor} target={target}>
+              (Tor Onion service)
+            </a>
+          ) : null}
+        </li>
+      ))
+    }
+  </ul>
+</div>

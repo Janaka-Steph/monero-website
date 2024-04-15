@@ -1,0 +1,142 @@
+---
+// Corresponding page:
+// https://www.getmonero.org/resources/tools/index.html
+import '@/assets/styles/globals.css'
+import Layout from '@/layouts/baseLayout.astro'
+import TwoColsLayout from '@/components/twoColsLayout.astro'
+import Container from '@/components/container.astro'
+import { Image } from 'astro:assets'
+import tools from './_images/tools.svg'
+import ListSection from '@/components/listSection.astro'
+import OneColLayout from '../../../components/oneColLayout.astro'
+---
+
+<Layout title="Third Party Tools | Monero">
+  <Container>
+    <TwoColsLayout hasRightImage centered>
+      <Fragment slot="left">
+        <h2>Third Party Tools</h2>
+        <p>
+          Below is a list of third-party tools for interacting with the Monero ecosystem. These tools are not vetted by
+          the GetMonero team, see the disclaimer at the bottom of this page. If a tool no longer supports Monero or you
+          would like a Monero tool to be listed, please <a
+            class="text-primary"
+            href="https://github.com/monero-project/monero-site/issues"
+            target="_blank"
+          >
+            open a GitHub issue
+          </a> and let us know.
+        </p>
+      </Fragment>
+      <Image src={tools} alt="tools" slot="right" />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <ListSection
+        slot="left"
+        sectionTitle="Block Explorers"
+        links={[
+          { text: 'LocalMonero Explorer', url: 'https://localmonero.co/blocks/' },
+          { text: 'xmrchain.net', url: 'https://xmrchain.net/' },
+          { text: 'Explore Monero', url: 'https://exploremonero.com/' },
+          { text: 'Monero Vision', url: 'https://monerovision.com/' },
+          {
+            text: 'P2Pool',
+            url: 'https://monerovision.com/',
+            tor: 'http://yucmgsbw7nknw7oi3bkuwudvc657g2xcqahhbjyewazusyytapqo4xid.onion/explorer/',
+          },
+        ]}
+      />
+      <ListSection
+        slot="right"
+        sectionTitle="Address Generators"
+        links={[
+          { text: 'xmr.llcoins.net', url: 'https://xmr.llcoins.net/' },
+          { text: 'monerotech.info', url: 'https://monerotech.info/' },
+        ]}
+      />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <ListSection
+        slot="left"
+        sectionTitle="Network"
+        links={[
+          {
+            text: 'monerohash.com - Monero node map',
+            url: 'https://monerohash.com/nodes-distribution.html',
+          },
+          {
+            text: 'LocalMonero.co blocks - Explorer and Statistics',
+            url: 'https://localmonero.co/blocks',
+          },
+          { text: 'NOWNodes - node APIs', url: 'https://nownodes.io/nodes/monero-xmr' },
+          { text: 'GetBlock - Blockchain nodes provider', url: 'https://getblock.io/nodes/xmr/' },
+          { text: 'Monero.fail - Monero node list and node map', url: 'https://monero.fail/' },
+          { text: 'TxStreet - Transaction and block visualizer', url: 'https://txstreet.com/' },
+        ]}
+      />
+      <ListSection
+        slot="right"
+        sectionTitle="Market"
+        links={[
+          {
+            text: 'Cryptoradar - Marketplace comparison website',
+            url: 'https://cryptoradar.com/buy-monero',
+          },
+          {
+            text: 'KryptoCheck - German marketplace comparison website',
+            url: 'https://kryptocheck.de/',
+          },
+        ]}
+      />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <TwoColsLayout>
+      <ListSection
+        slot="left"
+        sectionTitle="Miscellaneous"
+        links={[
+          { text: 'Monero.how', url: 'https://www.monero.how/' },
+          { text: 'Moneroj.net - Charts and metrics', url: 'https://moneroj.net/' },
+          {
+            text: 'MoneroLogs - Archive of Monero IRC channels',
+            url: 'https://libera.monerologs.net/',
+          },
+        ]}
+      />
+      <ListSection
+        slot="right"
+        sectionTitle="Payment Gateways"
+        links={[
+          { text: 'BTCPay Server', url: 'https://btcpayserver.org/' },
+          { text: 'BitCart', url: 'https://bitcart.ai/' },
+          { text: 'CDPay', url: 'https://www.cdpay.eu/' },
+          { text: 'CoinPayments', url: 'https://www.coinpayments.net/' },
+          { text: 'CryptoWoo Monero Plugin (WooCommerce)', url: 'https://www.cryptowoo.com/' },
+          { text: 'Monero WooCommerce Extension (PHP)', url: 'https://github.com/monero-integrations/monerowp' },
+          { text: 'NOWPayments', url: 'https://nowpayments.io/' },
+        ]}
+      />
+    </TwoColsLayout>
+  </Container>
+
+  <Container>
+    <OneColLayout>
+      <p>
+        "Please note: these links are being provided as a convenience and for informational purposes only; they do not
+        constitute an endorsement by the Monero community of any products, services or opinions of the corporations or
+        organizations or individuals listed. The Monero community bears no responsibility for the accuracy, legality, or
+        content of these external sites. Contact the external site for answers to questions regarding its content. As
+        always, caveat emptor ('buyer beware'); you are responsible for doing your own research. Always use judgement
+        when making online purchases."
+      </p>
+    </OneColLayout>
+  </Container>
+</Layout>

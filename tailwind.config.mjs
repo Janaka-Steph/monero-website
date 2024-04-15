@@ -18,6 +18,7 @@ export default {
           DEFAULT: 'hsl(var(--secondary) / <alpha-value>)',
           foreground: 'hsl(var(--secondary-foreground) / <alpha-value>)',
           light: 'hsl(var(--secondary-light) / <alpha-value>)',
+          dark: 'hsl(var(--secondary-dark) / <alpha-value>)',
         },
         muted: {
           DEFAULT: 'hsl(var(--muted) / <alpha-value>)',
