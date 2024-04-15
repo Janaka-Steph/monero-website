@@ -37,6 +37,10 @@ All commands are run from the root of the project, from a terminal:
 | `pnpm astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `pnpm astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 Want to learn more?
+## Sitemap
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+![sitemap](./public/images/sitemap.png)
+
+## Figma design
+
+[Figma design](https://www.figma.com/file/yT4JTUfvBkAsBDPNPJL1gx/Monero-Redesign-Concept?type=design&node-id=0-1&mode=design&t=LnVBON0EsvMBaNYI-0) made by Hammermann, announced in this [Reddit post](https://www.reddit.com/r/Monero/comments/pr8x6v/a_redesign_concept_for_wwwgetmoneroorg/).
