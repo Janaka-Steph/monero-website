@@ -1,6 +1,10 @@
 ---
 import { tv } from 'tailwind-variants'
 
+interface Props {
+  class?: string
+}
+
 const buttonVariants = tv({
   base: 'inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors disabled:pointer-events-none disabled:opacity-50',
   variants: {
@@ -28,9 +32,9 @@ const buttonVariants = tv({
  * For Astro components, we recommend setting your defaultVariants within
  * Astro.props (which are `undefined` by default)
  */
-const { intent = 'primary', size = 'default', ...rest } = Astro.props
+const { class: className, intent = 'primary', size = 'default', ...rest } = Astro.props
 ---
 
-<button class={buttonVariants({ intent, size })} {...rest}>
+<button class={buttonVariants({ intent, size, class: className })} {...rest}>
   <slot />
 </button>
